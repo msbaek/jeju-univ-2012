@@ -1,0 +1,65 @@
+제주대 강의
+OOP - 1주차 
+    왜 ?
+        http://javacan.tistory.com/entry/OO-Basic-1-Object
+        유지보수
+        절차지향 vs 객체지향
+    Encapsulation
+        http://javacan.tistory.com/entry/EncapsulationExcerprtFromJavaBook
+        객체 지향의 핵심 중의 핵심
+        캡슐화는 자세한 내부 구현을 외부에 드러내지 않고 숨기는 것이다.
+        캡슐화를 하게 되면 내부에 데이터를 어떻게 저장하는 지, 그 데이터를 어떻게 처리하는 지, 또는 특정 기능을 어떻게 제공하는 지에 대한 내용은 드러내지 않는다. 단지, 객체가 어떤 기능을 제공하는 지만 공유하게 된다.
+    Abstraction
+        http://javacan.tistory.com/entry/OO-Basic-2-AbstractionAndPolymorphism
+        추상화의 사전적 의미는 특정한 개별 사물과 관련되지 않은 공통된 속성이나 관계 등을 뽑아내는 것이다. 이를 컴퓨터 관점에서 생각해보면, 추상화란 데이터나 프로세스 등을 의미가 비슷한 개념이나 표현으로 정의해 나가는 과정이면서 동시에 각 개별 개체의 구현에 대한 상세함은 감추는 것, 이것이 추상화라고 할 수 있다.
+
+환경 설정
+    TDD를 하기 위한 간단한 설정
+    git, github
+
+2.names
+    그냥 읽어보라고 주면 될 듯
+
+3.functions
+	한가지 일만 해야 한다.
+	크기는 ?
+	Fitness Example
+	Refactoring
+		design
+		
+4.function.structure
+	인자의 갯수
+	boolean 인자 금지
+	the stepdown rule(public -> private)
+	switches and cases(flow of control vs source code dependency): polymorphic interface 삽입
+		fan-out problem
+		app / main partition
+		dependency injection
+	Tell don't ask
+	Law of Demeter
+	Error Handling Example by TDD
+		stack
+
+5.form
+	Comment를 없애라.
+	Good / Bad Comments
+	Formatting
+	Class란 ?
+	Data Structure란 ?
+6.tdd_part_i
+6.tdd_part_ii
+	bowling game
+	반박에 대한 답변
+
+7.architecture_usecases_high_level_design
+8.solid_foundations
+	The Source Code is the Design
+	Design Smells
+	What is OO
+		OO의 핵심
+		OO Design
+9.srp
+10.ocp
+11.lsp
+12.isp
+13.dip
