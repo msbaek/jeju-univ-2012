@@ -1,0 +1,1608 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!-- saved from url=(0081)http://build.gaia.daum.net/wiki/study:clean-coders-codecasts:4.function.structure -->
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ko" lang="ko" dir="ltr"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  
+  <title>
+    study:clean-coders-codecasts:4.function.structure    []
+  </title>
+
+  <meta name="generator" content="DokuWiki Release 2008-05-05">
+<meta name="robots" content="index,follow">
+<meta name="date" content="2011-12-13T14:50:47+0900">
+<meta name="keywords" content="study,clean-coders-codecasts,4.function.structure">
+<link rel="search" type="application/opensearchdescription+xml" href="http://build.gaia.daum.net/wiki/lib/exe/opensearch.php" title="&lt;img src=&quot;http://build.gaia.daum.net/images/team_ci.png&quot;/&gt;">
+<link rel="start" href="http://build.gaia.daum.net/wiki/">
+<link rel="contents" href="http://build.gaia.daum.net/wiki/study:clean-coders-codecasts:4.function.structure?do=index" title="색인">
+<link rel="alternate" type="application/rss+xml" title="Recent Changes" href="http://build.gaia.daum.net/wiki/feed.php">
+<link rel="alternate" type="application/rss+xml" title="Current Namespace" href="http://build.gaia.daum.net/wiki/feed.php?mode=list&ns=study:clean-coders-codecasts">
+<link rel="alternate" type="text/html" title="Plain HTML" href="http://build.gaia.daum.net/wiki/_export/xhtml/study:clean-coders-codecasts:4.function.structure">
+<link rel="alternate" type="text/plain" title="Wiki Markup" href="http://build.gaia.daum.net/wiki/_export/raw/study:clean-coders-codecasts:4.function.structure">
+<link rel="stylesheet" media="all" type="text/css" href="./study clean-coders-codecasts 4.function.structure []_files/css.php">
+<link rel="stylesheet" media="screen" type="text/css" href="./study clean-coders-codecasts 4.function.structure []_files/css(1).php">
+<link rel="stylesheet" media="print" type="text/css" href="./study clean-coders-codecasts 4.function.structure []_files/css(2).php">
+<script type="text/javascript" charset="utf-8" src="./study clean-coders-codecasts 4.function.structure []_files/js.php"></script><script type="text/javascript" src="./study clean-coders-codecasts 4.function.structure []_files/e.js"></script>
+
+  <link rel="shortcut icon" href="http://build.gaia.daum.net/wiki/lib/tpl/default/images/favicon.ico">
+
+  </head>
+
+<body>
+<div class="dokuwiki">
+  
+  <div class="stylehead">
+
+    <div class="header">
+      <div class="pagename">
+        [[<a href="http://build.gaia.daum.net/wiki/study:clean-coders-codecasts:4.function.structure?do=backlink" title="이전 링크">study:clean-coders-codecasts:4.function.structure</a>]]
+      </div>
+      <div class="logo">
+        <a href="http://build.gaia.daum.net/wiki/" name="dokuwiki__top" id="dokuwiki__top" accesskey="h" title="[CTRL+H]"><img src="./study clean-coders-codecasts 4.function.structure []_files/team_ci.png"></a>      </div>
+
+      <div class="clearer"></div>
+    </div>
+
+    
+    <div class="bar" id="bar__top">
+      <div class="bar-left" id="bar__topleft">
+        <form class="button btn_edit" method="post" action="./study clean-coders-codecasts 4.function.structure []_files/study clean-coders-codecasts 4.function.structure [].html"><div class="no"><input type="hidden" name="do" value="edit"><input type="hidden" name="rev" value=""><input type="submit" value="페이지 편집" class="button" accesskey="e" title="페이지 편집 [CTRL+E]"></div></form>        <form class="button btn_revs" method="get" action="./study clean-coders-codecasts 4.function.structure []_files/study clean-coders-codecasts 4.function.structure [].html"><div class="no"><input type="hidden" name="do" value="revisions"><input type="submit" value="이전 버전들" class="button" accesskey="o" title="이전 버전들 [CTRL+O]"></div></form>      </div>
+
+      <div class="bar-right" id="bar__topright">
+        <form class="button btn_recent" method="get" action="http://build.gaia.daum.net/wiki/"><div class="no"><input type="hidden" name="do" value="recent"><input type="submit" value="최근에 바뀐 것" class="button" accesskey="r" title="최근에 바뀐 것 [CTRL+R]"></div></form>        <form action="http://build.gaia.daum.net/wiki/" accept-charset="utf-8" class="search" id="dw__search"><div class="no"><input type="hidden" name="do" value="search"><input type="text" id="qsearch__in" accesskey="f" name="id" class="edit" title="[CTRL+F]"><input type="submit" value="찾기" class="button" title="찾기"><div id="qsearch__out" class="ajax_qsearch JSpopup"></div></div></form>&nbsp;
+      </div>
+
+      <div class="clearer"></div>
+    </div>
+
+        <div class="breadcrumbs">
+      <span class="bchead">추적:</span> <span class="bcsep">»</span> <a href="http://build.gaia.daum.net/wiki/study:clean-coders-codecasts:7.architecture_usecases_high_level_design" class="breadcrumbs" title="study:clean-coders-codecasts:7.architecture_usecases_high_level_design">7.architecture_usecases_high_level_design</a> <span class="bcsep">»</span> <a href="http://build.gaia.daum.net/wiki/study:clean-coders-codecasts:3.functions" class="breadcrumbs" title="study:clean-coders-codecasts:3.functions">3.functions</a> <span class="bcsep">»</span> <a href="http://build.gaia.daum.net/wiki/wiki:syntax" class="breadcrumbs" title="wiki:syntax">syntax</a> <span class="bcsep">»</span> <a href="http://build.gaia.daum.net/wiki/start" class="breadcrumbs" title="start">start</a> <span class="bcsep">»</span> <a href="http://build.gaia.daum.net/wiki/study:clean-coders-codecasts" class="breadcrumbs" title="study:clean-coders-codecasts">clean-coders-codecasts</a> <span class="bcsep">»</span> <span class="curid"><a href="./study clean-coders-codecasts 4.function.structure []_files/study clean-coders-codecasts 4.function.structure [].html" class="breadcrumbs" title="study:clean-coders-codecasts:4.function.structure">4.function.structure</a></span>          </div>
+    
+        <div class="breadcrumbs">
+      <span class="bchead">현재 위치: </span><a href="http://build.gaia.daum.net/wiki/start" title="start">start</a> » <a href="http://build.gaia.daum.net/wiki/study" title="study">study</a> » <a href="http://build.gaia.daum.net/wiki/study:clean-coders-codecasts" title="study:clean-coders-codecasts">clean-coders-codecasts</a> » <a href="./study clean-coders-codecasts 4.function.structure []_files/study clean-coders-codecasts 4.function.structure [].html" title="study:clean-coders-codecasts:4.function.structure">4.function.structure</a>    </div>
+    
+  </div>
+  
+  
+  <div class="page">
+    <!-- wikipage start -->
+    <!-- TOC START -->
+<div class="toc">
+<div class="tocheader toctoggle" id="toc__header" style="cursor: pointer; "><span id="toc__toggle" class="toc_close" style="cursor: pointer; "><span>−</span></span>목차</div>
+<div id="toc__inside">
+
+<ul class="toc">
+<li class="level1"><div class="li"><span class="li"><a href="http://build.gaia.daum.net/wiki/study:clean-coders-codecasts:4.function.structure#function_structure" class="toc">Function Structure</a></span></div>
+<ul class="toc">
+<li class="level2"><div class="li"><span class="li"><a href="http://build.gaia.daum.net/wiki/study:clean-coders-codecasts:4.function.structure#overview" class="toc">Overview</a></span></div></li>
+<li class="level2"><div class="li"><span class="li"><a href="http://build.gaia.daum.net/wiki/study:clean-coders-codecasts:4.function.structure#arguments" class="toc">Arguments</a></span></div></li>
+<li class="level2"><div class="li"><span class="li"><a href="http://build.gaia.daum.net/wiki/study:clean-coders-codecasts:4.function.structure#three_arguments_max" class="toc">Three Arguments Max</a></span></div></li>
+<li class="level2"><div class="li"><span class="li"><a href="http://build.gaia.daum.net/wiki/study:clean-coders-codecasts:4.function.structure#no_boolean_arguments_ever" class="toc">no boolean arguments ever</a></span></div></li>
+<li class="level2"><div class="li"><span class="li"><a href="http://build.gaia.daum.net/wiki/study:clean-coders-codecasts:4.function.structure#innies_not_outies" class="toc">Innies not Outies</a></span></div></li>
+<li class="level2"><div class="li"><span class="li"><a href="http://build.gaia.daum.net/wiki/study:clean-coders-codecasts:4.function.structure#the_null_defense" class="toc">the null defense</a></span></div></li>
+<li class="level2"><div class="li"><span class="li"><a href="http://build.gaia.daum.net/wiki/study:clean-coders-codecasts:4.function.structure#the_stepdown_rule" class="toc">the stepdown rule</a></span></div></li>
+<li class="level2"><div class="li"><span class="li"><a href="http://build.gaia.daum.net/wiki/study:clean-coders-codecasts:4.function.structure#switches_and_cases" class="toc">switches and cases</a></span></div></li>
+<li class="level2"><div class="li"><span class="li"><a href="http://build.gaia.daum.net/wiki/study:clean-coders-codecasts:4.function.structure#paradigms" class="toc">Paradigms</a></span></div></li>
+<li class="level2"><div class="li"><span class="li"><a href="http://build.gaia.daum.net/wiki/study:clean-coders-codecasts:4.function.structure#functional_programming" class="toc">functional programming</a></span></div></li>
+<li class="level2"><div class="li"><span class="li"><a href="http://build.gaia.daum.net/wiki/study:clean-coders-codecasts:4.function.structure#side_effects" class="toc">Side Effects</a></span></div></li>
+<li class="level2"><div class="li"><span class="li"><a href="http://build.gaia.daum.net/wiki/study:clean-coders-codecasts:4.function.structure#command_query_separation" class="toc">Command Query Separation</a></span></div></li>
+<li class="level2"><div class="li"><span class="li"><a href="http://build.gaia.daum.net/wiki/study:clean-coders-codecasts:4.function.structure#tell_don_t_ask" class="toc">Tell Don't Ask</a></span></div>
+<ul class="toc">
+<li class="level3"><div class="li"><span class="li"><a href="http://build.gaia.daum.net/wiki/study:clean-coders-codecasts:4.function.structure#law_of_demeter" class="toc">Law of Demeter</a></span></div></li>
+</ul>
+</li>
+<li class="level2"><div class="li"><span class="li"><a href="http://build.gaia.daum.net/wiki/study:clean-coders-codecasts:4.function.structure#structured_programming" class="toc">structured programming</a></span></div></li>
+<li class="level2"><div class="li"><span class="li"><a href="http://build.gaia.daum.net/wiki/study:clean-coders-codecasts:4.function.structure#early_returns" class="toc">early returns</a></span></div></li>
+<li class="level2"><div class="li"><span class="li"><a href="http://build.gaia.daum.net/wiki/study:clean-coders-codecasts:4.function.structure#error_handling" class="toc">Error Handling</a></span></div>
+<ul class="toc">
+<li class="level3"><div class="li"><span class="li"><a href="http://build.gaia.daum.net/wiki/study:clean-coders-codecasts:4.function.structure#테스트_추가" class="toc">1. 테스트 추가</a></span></div></li>
+<li class="level3"><div class="li"><span class="li"><a href="http://build.gaia.daum.net/wiki/study:clean-coders-codecasts:4.function.structure#컴파일될_만큼_만_코드_추가" class="toc">2. 컴파일될 만큼 만 코드 추가</a></span></div></li>
+<li class="level3"><div class="li"><span class="li"><a href="http://build.gaia.daum.net/wiki/study:clean-coders-codecasts:4.function.structure#mystack을_stack으로_rename" class="toc">3. MyStack을 Stack으로 Rename</a></span></div></li>
+<li class="level3"><div class="li"><span class="li"><a href="http://build.gaia.daum.net/wiki/study:clean-coders-codecasts:4.function.structure#failing_test_추가" class="toc">4. Failing Test 추가</a></span></div></li>
+<li class="level3"><div class="li"><span class="li"><a href="http://build.gaia.daum.net/wiki/study:clean-coders-codecasts:4.function.structure#test_성공시킬_만큼_만_개발" class="toc">5. Test 성공시킬 만큼 만 개발</a></span></div></li>
+<li class="level3"><div class="li"><span class="li"><a href="http://build.gaia.daum.net/wiki/study:clean-coders-codecasts:4.function.structure#getsize_메소드_추가" class="toc">6. getSize() 메소드 추가</a></span></div></li>
+<li class="level3"><div class="li"><span class="li"><a href="http://build.gaia.daum.net/wiki/study:clean-coders-codecasts:4.function.structure#push_메소드_추가" class="toc">7. push() 메소드 추가</a></span></div></li>
+<li class="level3"><div class="li"><span class="li"><a href="http://build.gaia.daum.net/wiki/study:clean-coders-codecasts:4.function.structure#assert_추가" class="toc">8. assert 추가</a></span></div></li>
+<li class="level3"><div class="li"><span class="li"><a href="http://build.gaia.daum.net/wiki/study:clean-coders-codecasts:4.function.structure#동작하도록_개선" class="toc">9. 동작하도록 개선</a></span></div></li>
+<li class="level3"><div class="li"><span class="li"><a href="http://build.gaia.daum.net/wiki/study:clean-coders-codecasts:4.function.structure#테스트_추가1" class="toc">10. 테스트 추가</a></span></div></li>
+<li class="level3"><div class="li"><span class="li"><a href="http://build.gaia.daum.net/wiki/study:clean-coders-codecasts:4.function.structure#테스트_개선_-_convert_local_to_field" class="toc">11. 테스트 개선 - Convert local to field</a></span></div></li>
+</ul>
+</li>
+<li class="level2"><div class="li"><span class="li"><a href="http://build.gaia.daum.net/wiki/study:clean-coders-codecasts:4.function.structure#errors_first" class="toc">Errors First</a></span></div>
+<ul class="toc">
+<li class="level3"><div class="li"><span class="li"><a href="http://build.gaia.daum.net/wiki/study:clean-coders-codecasts:4.function.structure#whenpushedpastlimit_stackoverflows_테스트_추가" class="toc">12. WhenPushedPastLimit_StackOverflows 테스트 추가</a></span></div></li>
+</ul>
+</li>
+<li class="level2"><div class="li"><span class="li"><a href="http://build.gaia.daum.net/wiki/study:clean-coders-codecasts:4.function.structure#prefer_exceptions" class="toc">Prefer Exceptions</a></span></div></li>
+<li class="level2"><div class="li"><span class="li"><a href="http://build.gaia.daum.net/wiki/study:clean-coders-codecasts:4.function.structure#exceptions_are_for_callers" class="toc">Exceptions are for callers</a></span></div></li>
+<li class="level2"><div class="li"><span class="li"><a href="http://build.gaia.daum.net/wiki/study:clean-coders-codecasts:4.function.structure#use_unchecked_exceptions" class="toc">Use Unchecked Exceptions</a></span></div>
+<ul class="toc">
+<li class="level3"><div class="li"><span class="li"><a href="http://build.gaia.daum.net/wiki/study:clean-coders-codecasts:4.function.structure#whenoneispushed_oneispopped_메소드_추가" class="toc">13. WhenOneIsPushed_OneIsPopped() 메소드 추가</a></span></div></li>
+<li class="level3"><div class="li"><span class="li"><a href="http://build.gaia.daum.net/wiki/study:clean-coders-codecasts:4.function.structure#whenoneandtwoarepushed_twoandonearepopped_메소드_추가" class="toc">14. WhenOneAndTwoArePushed_TwoAndOneArePopped() 메소드 추가</a></span></div></li>
+<li class="level3"><div class="li"><span class="li"><a href="http://build.gaia.daum.net/wiki/study:clean-coders-codecasts:4.function.structure#whencreatingstackwithnegativesize_shouldthrowillegalcapacity_메소드_추가" class="toc">15. WhenCreatingStackWithNegativeSize_ShouldThrowIllegalCapacity() 메소드 추가</a></span></div></li>
+</ul>
+</li>
+<li class="level2"><div class="li"><span class="li"><a href="http://build.gaia.daum.net/wiki/study:clean-coders-codecasts:4.function.structure#special_cases" class="toc">Special Cases</a></span></div>
+<ul class="toc">
+<li class="level3"><div class="li"><span class="li"><a href="http://build.gaia.daum.net/wiki/study:clean-coders-codecasts:4.function.structure#whencreatingstackwithzerocapacity_anypushshouldoverflow_메소드_추가" class="toc">16. whenCreatingStackWithZeroCapacity_AnyPushShouldOverflow 메소드 추가</a></span></div></li>
+<li class="level3"><div class="li"><span class="li"><a href="http://build.gaia.daum.net/wiki/study:clean-coders-codecasts:4.function.structure#extract_interface" class="toc">17. Extract Interface</a></span></div></li>
+<li class="level3"><div class="li"><span class="li"><a href="http://build.gaia.daum.net/wiki/study:clean-coders-codecasts:4.function.structure#whenoneispushed_oneisontop_메소드_추가" class="toc">18. whenOneIsPushed_OneIsOnTop 메소드 추가</a></span></div></li>
+</ul>
+</li>
+<li class="level2"><div class="li"><span class="li"><a href="http://build.gaia.daum.net/wiki/study:clean-coders-codecasts:4.function.structure#null_is_not_an_error" class="toc">Null is not an error</a></span></div>
+<ul class="toc">
+<li class="level3"><div class="li"><span class="li"><a href="http://build.gaia.daum.net/wiki/study:clean-coders-codecasts:4.function.structure#whenstackisempty_topthrowsempty_메소드_추가" class="toc">19. whenStackIsEmpty_TopThrowsEmpty() 메소드 추가</a></span></div></li>
+<li class="level3"><div class="li"><span class="li"><a href="http://build.gaia.daum.net/wiki/study:clean-coders-codecasts:4.function.structure#withzerocapacitystack_topthrowsempty_메소드_추가" class="toc">20. WithZeroCapacityStack_TopThrowsEmpty() 메소드 추가</a></span></div></li>
+<li class="level3"><div class="li"><span class="li"><a href="http://build.gaia.daum.net/wiki/study:clean-coders-codecasts:4.function.structure#givenstackwithonetwopushed_findone_메소드_추가" class="toc">21. GivenStackWithOneTwoPushed_FindOne 메소드 추가</a></span></div></li>
+</ul>
+</li>
+<li class="level2"><div class="li"><span class="li"><a href="http://build.gaia.daum.net/wiki/study:clean-coders-codecasts:4.function.structure#null_is_a_value" class="toc">Null is a value</a></span></div>
+<ul class="toc">
+<li class="level3"><div class="li"><span class="li"><a href="http://build.gaia.daum.net/wiki/study:clean-coders-codecasts:4.function.structure#givenstackwithno2_find2soundreturnnull_메소드_추가" class="toc">22. GivenStackWithNo2_Find2SoundReturnNull 메소드 추가</a></span></div></li>
+</ul>
+</li>
+<li class="level2"><div class="li"><span class="li"><a href="http://build.gaia.daum.net/wiki/study:clean-coders-codecasts:4.function.structure#trying_is_one_thing" class="toc">Trying is One Thing</a></span></div></li>
+<li class="level2"><div class="li"><span class="li"><a href="http://build.gaia.daum.net/wiki/study:clean-coders-codecasts:4.function.structure#conclusion" class="toc">Conclusion</a></span></div></li></ul>
+</li></ul>
+</div>
+</div>
+<!-- TOC END -->
+
+
+
+<h1><a name="function_structure" id="function_structure">Function Structure</a></h1>
+<div class="level1">
+
+</div>
+<div class="secedit"><form class="button btn_secedit" method="post" action="./study clean-coders-codecasts 4.function.structure []_files/study clean-coders-codecasts 4.function.structure [].html"><div class="no"><input type="hidden" name="do" value="edit"><input type="hidden" name="lines" value="1-33"><input type="hidden" name="rev" value="1323755447"><input type="submit" value="편집" class="button" title="Function Structure"></div></form></div>
+<h2><a name="overview" id="overview">Overview</a></h2>
+<div class="level2">
+<ul>
+<li class="level1"><div class="li"> if, switch를 없애는 법</div>
+</li>
+<li class="level1"><div class="li"> assignment를 최소화. 상태 변화, 사이드 이펙트를 없애기 위해</div>
+</li>
+<li class="level1"><div class="li"> 함수의 많은 코드에서 에러 체크, 널 체크를 하는 것을 제거</div>
+</li>
+<li class="level1"><div class="li"> 중첩된 try-catch 블럭을 갖는 함수</div>
+</li>
+</ul>
+
+</div>
+<div class="secedit"><form class="button btn_secedit" method="post" action="./study clean-coders-codecasts 4.function.structure []_files/study clean-coders-codecasts 4.function.structure [].html"><div class="no"><input type="hidden" name="do" value="edit"><input type="hidden" name="lines" value="34-302"><input type="hidden" name="rev" value="1323755447"><input type="submit" value="편집" class="button" title="Overview"></div></form></div>
+<h2><a name="arguments" id="arguments">Arguments</a></h2>
+<div class="level2">
+<ul>
+<li class="level1"><div class="li"> 함수의 인자는 복잡도를 증가한다(double takes).</div>
+</li>
+</ul>
+
+</div>
+<div class="secedit"><form class="button btn_secedit" method="post" action="./study clean-coders-codecasts 4.function.structure []_files/study clean-coders-codecasts 4.function.structure [].html"><div class="no"><input type="hidden" name="do" value="edit"><input type="hidden" name="lines" value="303-389"><input type="hidden" name="rev" value="1323755447"><input type="submit" value="편집" class="button" title="Arguments"></div></form></div>
+<h2><a name="three_arguments_max" id="three_arguments_max">Three Arguments Max</a></h2>
+<div class="level2">
+<ul>
+<li class="level1"><div class="li"> 2개가 거의 최대이다. 드물게 3개를 사용.</div>
+</li>
+<li class="level1"><div class="li"> 개인적으로 3개까지만 허용. 3개도 많지만.</div>
+</li>
+<li class="level1"><div class="li"> 인자가 3개 이상이면 순서를 외우기 어렵다.</div>
+</li>
+<li class="level1"><div class="li"> 3개가 넘는 인자가 함수에 전될되어야 한다면, 그 인자들은 객체인 것이 맞을 것이다.</div>
+</li>
+<li class="level1"><div class="li"> 생성자의 많은 수의 인자를 넘기는 것 보다는 잘 지어진 이름을 갖는 setter가 낫다.</div>
+<ul>
+<li class="level2"><div class="li"> 이 경우 아주 짧은 시간 동안은 객체가 완전하지 않을 수 있다.</div>
+</li>
+<li class="level2"><div class="li"> 저자에겐 많은 단위 테스트가 있어서 이런 것이 문제가 되지 않는다고.</div>
+</li>
+</ul>
+</li>
+<li class="level1"><div class="li"> 내 코드의 독자가 읽기 쉽게하고, 내 코드 자체의 위생을 위해 3개 이상의 인자는 사용하지 않는다.</div>
+</li>
+</ul>
+
+</div>
+<div class="secedit"><form class="button btn_secedit" method="post" action="./study clean-coders-codecasts 4.function.structure []_files/study clean-coders-codecasts 4.function.structure [].html"><div class="no"><input type="hidden" name="do" value="edit"><input type="hidden" name="lines" value="390-1163"><input type="hidden" name="rev" value="1323755447"><input type="submit" value="편집" class="button" title="Three Arguments Max"></div></form></div>
+<h2><a name="no_boolean_arguments_ever" id="no_boolean_arguments_ever">no boolean arguments ever</a></h2>
+<div class="level2">
+<ul>
+<li class="level1"><div class="li"> boolean을 인자로 갖는 함수는 명확히 2가지 이상이 일을 하는 것이다.</div>
+<ul>
+<li class="level2"><div class="li"> true 경우를 위한 일 1가지와 false 경우를 위한 일 1가지</div>
+</li>
+<li class="level2"><div class="li"> true 경우와 false 경우를 위해 2개의 함수를 갖는 것이 맞다.</div>
+</li>
+</ul>
+</li>
+<li class="level1"><div class="li"> 인자에 있는 boolean은 오류를 유발하거나 오해를 유발한다.</div>
+</li>
+<li class="level1"><div class="li"> 2개의 boolean을 받는 함수는 4가지 일을 하는 것이다.</div>
+</li>
+<li class="level1"><div class="li"> 순서는 더 복잡하다. true, false가 전달되면 무슨 의미인지 알기 어렵고, 순서가 무슨 의미를 갖는지 알기 어렵다.</div>
+</li>
+</ul>
+
+</div>
+<div class="secedit"><form class="button btn_secedit" method="post" action="./study clean-coders-codecasts 4.function.structure []_files/study clean-coders-codecasts 4.function.structure [].html"><div class="no"><input type="hidden" name="do" value="edit"><input type="hidden" name="lines" value="1164-1766"><input type="hidden" name="rev" value="1323755447"><input type="submit" value="편집" class="button" title="no boolean arguments ever"></div></form></div>
+<h2><a name="innies_not_outies" id="innies_not_outies">Innies not Outies</a></h2>
+<div class="level2">
+<ul>
+<li class="level1"><div class="li"> no output arguments please</div>
+<ul>
+<li class="level2"><div class="li"> 사람들이 일반적으로 이렇게 생각하지 않는다.</div>
+</li>
+<li class="level2"><div class="li"> argument는 함수로 전달되는 것이지, 함수로 부터 변경되어 나오는 것이라고는 생각하지 않는다.</div>
+</li>
+<li class="level2"><div class="li"> output argument 대신 return value로 처리하라.</div>
+</li>
+</ul>
+</li>
+</ul>
+<div class="code"><p>returnText</p><pre class="code java"><span class="co1">// does 'returnText' go in ? Go out ? Both ?</span>
+<span class="kw2">private</span> <a href="http://www.google.com/search?hl=en&q=allinurl%3AString+java.sun.com&btnI=I%27m%20Feeling%20Lucky"><span class="kw3">String</span></a> toSimpleTextParse table, <a href="http://www.google.com/search?hl=en&q=allinurl%3AStringBuffer+java.sun.com&btnI=I%27m%20Feeling%20Lucky"><span class="kw3">StringBuffer</span></a> returnText<span class="br0">)</span> <span class="br0">{</span>
+    <span class="kw1">if</span><span class="br0">(</span>table.<span class="me1">parts</span> == <span class="kw2">null</span><span class="br0">)</span> <span class="br0">{</span>
+        simpleTextOfLeave<span class="br0">(</span>table, returnText<span class="br0">)</span><span class="sy0">;</span>
+        simpleTextOfMore<span class="br0">(</span>table, returnText<span class="br0">)</span><span class="sy0">;</span>
+        <span class="kw2">return</span> returnText.<span class="me1">toString</span><span class="br0">(</span><span class="br0">)</span><span class="sy0">;</span>
+    <span class="br0">}</span>
+    simpleTextOfParts<span class="br0">(</span>table, returnText<span class="br0">)</span><span class="sy0">;</span>
+    simpleTextOfMore<span class="br0">(</span>table, returntext<span class="br0">)</span><span class="sy0">;</span>
+    <span class="kw2">return</span> returntext.<span class="me1">toString</span><span class="br0">(</span><span class="br0">)</span><span class="sy0">;</span>
+<span class="br0">}</span></pre></div><ul>
+<li class="level1"><div class="li"> output arguments cause double takes</div>
+</li>
+</ul>
+
+</div>
+<div class="secedit"><form class="button btn_secedit" method="post" action="./study clean-coders-codecasts 4.function.structure []_files/study clean-coders-codecasts 4.function.structure [].html"><div class="no"><input type="hidden" name="do" value="edit"><input type="hidden" name="lines" value="1767-2554"><input type="hidden" name="rev" value="1323755447"><input type="submit" value="편집" class="button" title="Innies not Outies"></div></form></div>
+<h2><a name="the_null_defense" id="the_null_defense">the null defense</a></h2>
+<div class="level2">
+<ul>
+<li class="level1"><div class="li"> null을 전달하거나 null을 기대하는 함수는 boolean을 전달하는 만큼 잘못된 것이다.</div>
+<ul>
+<li class="level2"><div class="li"> null인 경우와 행위와 null이 아닌 경우의 행위가 있다는 말이다.</div>
+</li>
+<li class="level2"><div class="li"> 2개의 함수를 만드는 것이 맞다.</div>
+</li>
+</ul>
+</li>
+<li class="level1"><div class="li"> null을 pseudo boolean로 쓰지 마라.</div>
+</li>
+<li class="level1"><div class="li"> defensive programming을 좋아하지 않는다.</div>
+<ul>
+<li class="level2"><div class="li"> 내 코드를 null, 에러 체크로 더럽히고 싶지 않다.</div>
+</li>
+<li class="level2"><div class="li"> 내 동료가 실수로 null이 허용되지 않는 곳에 실수로 null을 전달하는 것을 허용하고 싶지 않다.</div>
+</li>
+</ul>
+</li>
+<li class="level1"><div class="li"> defensive programming은 잘못되었다는 단서(smell)이다.</div>
+</li>
+<li class="level1"><div class="li"> defensive programming: 팀원이나 단위 테스트를 못 믿는다는 말</div>
+</li>
+<li class="level1"><div class="li"> 코드에서 지속적으로 null 여부를 조사하는 것은 단위 테스트에서 이를 검증하고 있지 못하다는 의미이다.</div>
+</li>
+<li class="level1"><div class="li"> public api의 경우는 defensive하게 programming한다.</div>
+</li>
+</ul>
+
+</div>
+<div class="secedit"><form class="button btn_secedit" method="post" action="./study clean-coders-codecasts 4.function.structure []_files/study clean-coders-codecasts 4.function.structure [].html"><div class="no"><input type="hidden" name="do" value="edit"><input type="hidden" name="lines" value="2555-3492"><input type="hidden" name="rev" value="1323755447"><input type="submit" value="편집" class="button" title="the null defense"></div></form></div>
+<h2><a name="the_stepdown_rule" id="the_stepdown_rule">the stepdown rule</a></h2>
+<div class="level2">
+<ul>
+<li class="level1"><div class="li"> 모든 public은 위에, 모든 private은 아래에</div>
+</li>
+</ul>
+
+<p>
+<a href="http://build.gaia.daum.net/wiki/_detail/study:clean-coders-codecasts:fig-1.png?id=study%3Aclean-coders-codecasts%3A4.function.structure&cache=cache" class="media" title="study:clean-coders-codecasts:fig-1.png"><img src="./study clean-coders-codecasts 4.function.structure []_files/study-clean-coders-codecasts-fig-1.png" class="media" title="fig-1" alt="fig-1"></a>
+</p>
+
+<p>
+<a href="http://build.gaia.daum.net/wiki/_detail/study:clean-coders-codecasts:fig-2.png?id=study%3Aclean-coders-codecasts%3A4.function.structure&cache=cache" class="media" title="study:clean-coders-codecasts:fig-2.png"><img src="./study clean-coders-codecasts 4.function.structure []_files/study-clean-coders-codecasts-fig-2.png" class="media" title="fig-2" alt="fig-2"></a>
+</p>
+<ul>
+<li class="level1"><div class="li"> public part만 사용자들에게 전달하면 됨.</div>
+</li>
+<li class="level1"><div class="li"> 예전 자바 개발자들 중에는 private 부분을 상위에 위치시키는 경우가 있었다.</div>
+</li>
+<li class="level1"><div class="li"> 이 규칙과 다른 stepdown 규칙에 대해서 설명하고자 한다.</div>
+</li>
+<li class="level1"><div class="li"> import part goes to top, details goes to bottom</div>
+<ul>
+<li class="level2"><div class="li"> 잡지의 예: 헤드라인, 시놉시스, 아웃라인, 상세한 내역들</div>
+</li>
+</ul>
+</li>
+<li class="level1"><div class="li"> 이 방식의 2가지 이점</div>
+<ol>
+<li class="level2"><div class="li"> 편집자들은 마지막 부분은 필수적인 내용 전달 오류 없이 제거할 수 있다.</div>
+</li>
+<li class="level2"><div class="li"> 독자들은 제일 위에서부터 읽기 시작해서 지루해지면 그만 읽으면 된다.</div>
+</li>
+</ol>
+</li>
+<li class="level1"><div class="li"> backward reference없이 top에서 bottom으로 읽을 수 있게.</div>
+</li>
+</ul>
+
+<p>
+<a href="http://build.gaia.daum.net/wiki/_detail/study:clean-coders-codecasts:fig-3.png?id=study%3Aclean-coders-codecasts%3A4.function.structure&cache=cache" class="media" title="study:clean-coders-codecasts:fig-3.png"><img src="./study clean-coders-codecasts 4.function.structure []_files/study-clean-coders-codecasts-fig-3.png" class="media" title="fig-3" alt="fig-3"></a>
+<a href="http://build.gaia.daum.net/wiki/_detail/study:clean-coders-codecasts:fig-4.png?id=study%3Aclean-coders-codecasts%3A4.function.structure&cache=cache" class="media" title="study:clean-coders-codecasts:fig-4.png"><img src="./study clean-coders-codecasts 4.function.structure []_files/study-clean-coders-codecasts-fig-4.png" class="media" title="fig-4" alt="fig-4"></a>
+</p>
+<ul>
+<li class="level1"><div class="li"> private 변수 선언이 위에 있지만, 이건 자바의 관행이니 걍 두자.</div>
+</li>
+</ul>
+<div class="code"><p>stepdown rule</p><pre class="code java"><span class="kw2">public</span> <span class="kw4">void</span> serve<span class="br0">(</span><a href="http://www.google.com/search?hl=en&q=allinurl%3ASocket+java.sun.com&btnI=I%27m%20Feeling%20Lucky"><span class="kw3">Socket</span></a> s<span class="br0">)</span> <span class="br0">{</span>
+    <span class="kw2">try</span> <span class="br0">{</span>
+        tryProcessInstructions<span class="br0">(</span>s<span class="br0">)</span><span class="sy0">;</span>
+    <span class="br0">}</span> <span class="kw2">catch</span><span class="br0">(</span><a href="http://www.google.com/search?hl=en&q=allinurl%3AThrowable+java.sun.com&btnI=I%27m%20Feeling%20Lucky"><span class="kw3">Throwable</span></a> e<span class="br0">)</span> <span class="br0">{</span>
+    <span class="br0">}</span> <span class="kw2">finally</span> <span class="br0">{</span>
+        slimFactory.<span class="me1">stop</span><span class="br0">(</span><span class="br0">)</span><span class="sy0">;</span>
+        close<span class="br0">(</span><span class="br0">)</span><span class="sy0">;</span>
+        closeEnclosingServiceInSeperateThread<span class="br0">(</span><span class="br0">)</span><span class="sy0">;</span>
+    <span class="br0">}</span>
+<span class="br0">}</span>
+&nbsp;
+    <span class="kw2">private</span> <span class="kw4">void</span> tryProcessInstructions<span class="br0">(</span><a href="http://www.google.com/search?hl=en&q=allinurl%3ASocket+java.sun.com&btnI=I%27m%20Feeling%20Lucky"><span class="kw3">Socket</span></a> s<span class="br0">)</span> <span class="kw2">throws</span> <a href="http://www.google.com/search?hl=en&q=allinurl%3AException+java.sun.com&btnI=I%27m%20Feeling%20Lucky"><span class="kw3">Exception</span></a> <span class="br0">{</span>
+        initialize<span class="br0">(</span>s<span class="br0">)</span><span class="sy0">;</span>
+        ...
+        <span class="me1">more</span> = processOneSetOfInstructions<span class="br0">(</span><span class="br0">)</span><span class="sy0">;</span>
+    <span class="br0">}</span>
+&nbsp;
+        <span class="kw2">private</span> initialize<span class="br0">(</span><a href="http://www.google.com/search?hl=en&q=allinurl%3ASocket+java.sun.com&btnI=I%27m%20Feeling%20Lucky"><span class="kw3">Socket</span></a> s<span class="br0">)</span> <span class="kw2">throws</span> <a href="http://www.google.com/search?hl=en&q=allinurl%3AException+java.sun.com&btnI=I%27m%20Feeling%20Lucky"><span class="kw3">Exception</span></a> <span class="br0">{</span>
+            ...
+        <span class="br0">}</span>
+&nbsp;
+        <span class="kw2">private</span> <span class="kw4">boolean</span> processOneSetOfInstructions <span class="br0">{</span>
+            <a href="http://www.google.com/search?hl=en&q=allinurl%3AString+java.sun.com&btnI=I%27m%20Feeling%20Lucky"><span class="kw3">String</span></a> instructions = getInstructionFromClient<span class="br0">(</span><span class="br0">)</span><span class="sy0">;</span>
+            ...
+            <span class="kw2">return</span> processTheInstructions<span class="br0">(</span>instructions<span class="br0">)</span><span class="sy0">;</span>
+        <span class="br0">}</span>
+&nbsp;
+            <span class="kw2">private</span> <a href="http://www.google.com/search?hl=en&q=allinurl%3AString+java.sun.com&btnI=I%27m%20Feeling%20Lucky"><span class="kw3">String</span></a> getInstructionFromClient<span class="br0">(</span><span class="br0">)</span> <span class="br0">{</span>
+                ...
+            <span class="br0">}</span>
+&nbsp;
+            <span class="kw2">private</span> <span class="kw4">boolean</span> processTheInstructions<span class="br0">(</span><a href="http://www.google.com/search?hl=en&q=allinurl%3AString+java.sun.com&btnI=I%27m%20Feeling%20Lucky"><span class="kw3">String</span></a> instructions<span class="br0">)</span> <span class="br0">{</span>
+                ...
+                <span class="me1">executeInstructions</span><span class="br0">(</span>instructions<span class="br0">)</span><span class="sy0">;</span>
+                ...
+                <span class="me1">sendResultsToClient</span><span class="br0">(</span>results<span class="br0">)</span><span class="sy0">;</span>
+            <span class="br0">}</span>
+&nbsp;
+                <span class="kw2">private</span> List<span class="sy0">&lt;</span>Object<span class="sy0">&gt;</span> executeInstructions<span class="br0">(</span><a href="http://www.google.com/search?hl=en&q=allinurl%3AString+java.sun.com&btnI=I%27m%20Feeling%20Lucky"><span class="kw3">String</span></a> instructions<span class="br0">)</span> <span class="br0">{</span>
+                    ...
+                <span class="br0">}</span>
+&nbsp;
+                <span class="kw2">private</span> <span class="kw4">void</span> sendResultsToClient<span class="br0">(</span>List<span class="sy0">&lt;</span>Object<span class="sy0">&gt;</span> results<span class="br0">)</span> <span class="br0">{</span>
+                    ...
+                <span class="br0">}</span>
+&nbsp;
+    <span class="kw2">private</span> <span class="kw4">void</span> close<span class="br0">(</span><span class="br0">)</span> <span class="br0">{</span>
+        ...
+    <span class="br0">}</span>
+&nbsp;
+    <span class="kw2">private</span> <span class="kw4">void</span> closeEnclosingServiceInSeperateThread<span class="br0">(</span><span class="br0">)</span> <span class="br0">{</span>
+        ...
+    <span class="br0">}</span></pre></div><ul>
+<li class="level1"><div class="li"> 모든 함수는 자식 함수를 호출하고, 자식 함수는 자신의 자식 함수를 호출할 수 있다.</div>
+</li>
+<li class="level1"><div class="li"> 다른 public 함수가 추가된다면 첫번째 public 함수의 hierarchy 후에 추가(serve함수부터 closeEnclosingServiceInSeperateThread 함수까지).</div>
+</li>
+<li class="level1"><div class="li"> try block안에서 하나의 메소드만 호출</div>
+</li>
+</ul>
+
+</div>
+<div class="secedit"><form class="button btn_secedit" method="post" action="./study clean-coders-codecasts 4.function.structure []_files/study clean-coders-codecasts 4.function.structure [].html"><div class="no"><input type="hidden" name="do" value="edit"><input type="hidden" name="lines" value="3493-6324"><input type="hidden" name="rev" value="1323755447"><input type="submit" value="편집" class="button" title="the stepdown rule"></div></form></div>
+<h2><a name="switches_and_cases" id="switches_and_cases">switches and cases</a></h2>
+<div class="level2">
+<ul>
+<li class="level1"><div class="li"> switch 문장 사용을 왜 꺼리나 ? </div>
+<ul>
+<li class="level2"><div class="li"> switch 문장은 OO 스럽지 않다 ? ← 만족할 만한 대답이 아니다.</div>
+</li>
+<li class="level2"><div class="li"> OO의 가장 큰 이점 중 하나는 의존성 관리 능력이다.</div>
+</li>
+</ul>
+</li>
+</ul>
+
+<p>
+<a href="http://build.gaia.daum.net/wiki/_detail/study:clean-coders-codecasts:fig-5.png?id=study%3Aclean-coders-codecasts%3A4.function.structure&cache=cache" class="media" title="study:clean-coders-codecasts:fig-5.png"><img src="./study clean-coders-codecasts 4.function.structure []_files/study-clean-coders-codecasts-fig-5.png" class="media" title="fig-5" alt="fig-5"></a>
+</p>
+<ul>
+<li class="level1"><div class="li"> fig-5와 같이 모듈 A와 모듈 B가 있다고 가정하자.</div>
+</li>
+<li class="level1"><div class="li"> 모듈 A의 함수가 모듈 B의 함수를 호출한다고 가정하자.</div>
+</li>
+<li class="level1"><div class="li"> 이 말은 모듈 A에서 모듈 B로의 의존성 관계가 있다는 말이다.</div>
+</li>
+<li class="level1"><div class="li"> 이러한 의존성은 2개의 컴포넌트를 갖는다.</div>
+<ul>
+<li class="level2"><div class="li"> flow of control(RT 의존성): 모듈 A가 모듈 B를 호출한다.</div>
+</li>
+<li class="level2"><div class="li"> source code dependency(import 등)</div>
+</li>
+</ul>
+</li>
+</ul>
+
+<p>
+<a href="http://build.gaia.daum.net/wiki/_detail/study:clean-coders-codecasts:fig-6.png?id=study%3Aclean-coders-codecasts%3A4.function.structure&cache=cache" class="media" title="study:clean-coders-codecasts:fig-6.png"><img src="./study clean-coders-codecasts 4.function.structure []_files/study-clean-coders-codecasts-fig-6.png" class="media" title="fig-6" alt="fig-6"></a>
+</p>
+<ul>
+<li class="level1"><div class="li"> 모듈 A와 B를 독립적으로 배포하고자 한다면 어떻게 되나 ?</div>
+</li>
+<li class="level1"><div class="li"> 모듈 A가 모듈 B에 source code dependency를 가지면 독립적으로 배포될 수 없다(심지어 독립적으로 컴파일될 수도 없다).</div>
+</li>
+<li class="level1"><div class="li"> 모듈 B의 변경은 모듈 A의 재컴파일, 재배포를 유발한다.</div>
+</li>
+</ul>
+
+<p>
+<a href="http://build.gaia.daum.net/wiki/_detail/study:clean-coders-codecasts:fig-7.png?id=study%3Aclean-coders-codecasts%3A4.function.structure&cache=cache" class="media" title="study:clean-coders-codecasts:fig-7.png"><img src="./study clean-coders-codecasts 4.function.structure []_files/study-clean-coders-codecasts-fig-7.png" class="media" title="fig-7" alt="fig-7"></a>
+</p>
+<ul>
+<li class="level1"><div class="li"> 객체지향은 뭔가 대단한 것을 허용한다.</div>
+<ul>
+<li class="level2"><div class="li"> run time 의존성은 그대로 둔채로 source code 의존성을 뒤집을 수 있다.</div>
+</li>
+</ul>
+<ol>
+<li class="level2"><div class="li"> 본래의 의존성을 제거</div>
+</li>
+<li class="level2"><div class="li"> polymorphic interface를 삽입</div>
+</li>
+<li class="level2"><div class="li"> 모듈 A는 인터페이스에 의존하고, 모듈 B는 인터페이스로부터 derive한다.</div>
+</li>
+</ol>
+</li>
+</ul>
+
+<p>
+<a href="http://build.gaia.daum.net/wiki/_detail/study:clean-coders-codecasts:fig-8.png?id=study%3Aclean-coders-codecasts%3A4.function.structure&cache=cache" class="media" title="study:clean-coders-codecasts:fig-8.png"><img src="./study clean-coders-codecasts 4.function.structure []_files/study-clean-coders-codecasts-fig-8.png" class="media" title="fig-8" alt="fig-8"></a>
+</p>
+<ul>
+<li class="level1"><div class="li"> 이렇게 되면 모듈 B의 입장에서는 source code 의존성이 역전된다.</div>
+</li>
+</ul>
+
+<p>
+<a href="http://build.gaia.daum.net/wiki/_detail/study:clean-coders-codecasts:fig-9.png?id=study%3Aclean-coders-codecasts%3A4.function.structure&cache=cache" class="media" title="study:clean-coders-codecasts:fig-9.png"><img src="./study clean-coders-codecasts 4.function.structure []_files/study-clean-coders-codecasts-fig-9.png" class="media" title="fig-9" alt="fig-9"></a>
+</p>
+<ul>
+<li class="level1"><div class="li"> B의 source code 의존성은 run time 의존성과 반대가 된다.</div>
+</li>
+<li class="level1"><div class="li"> source code 의존성은 run time 의존성과 반대가 된다.</div>
+</li>
+<li class="level1"><div class="li"> source code 의존성이 flow of control과 반대가 되었다.</div>
+</li>
+</ul>
+
+<p>
+<a href="http://build.gaia.daum.net/wiki/_detail/study:clean-coders-codecasts:fig-10.png?id=study%3Aclean-coders-codecasts%3A4.function.structure&cache=cache" class="media" title="study:clean-coders-codecasts:fig-10.png"><img src="./study clean-coders-codecasts 4.function.structure []_files/study-clean-coders-codecasts-fig-10.png" class="media" title="fig-10" alt="fig-10"></a>
+</p>
+<ul>
+<li class="level1"><div class="li"> 이제 모듈 A,B는 독립적으로 배포될 수 있다.</div>
+</li>
+<li class="level1"><div class="li"> Independent Deployability : one of OO의 강점</div>
+</li>
+</ul>
+
+<p>
+<a href="http://build.gaia.daum.net/wiki/_detail/study:clean-coders-codecasts:fig-11.png?id=study%3Aclean-coders-codecasts%3A4.function.structure&cache=cache" class="media" title="study:clean-coders-codecasts:fig-11.png"><img src="./study clean-coders-codecasts 4.function.structure []_files/study-clean-coders-codecasts-fig-11.png" class="media" title="fig-11" alt="fig-11"></a>
+</p>
+<ul>
+<li class="level1"><div class="li"> switch 문장은 독립적 배포(Independent Deployability)에 방해가 된다.</div>
+<ul>
+<li class="level2"><div class="li"> 각 case 문장은 외부 모듈에 의존성을 갖는다.</div>
+</li>
+<li class="level2"><div class="li"> 다수의 다른 모듈에 의존성을 갖을 수 있다.</div>
+</li>
+<li class="level2"><div class="li"> <strong> fan-out problem </strong>이라고 한다.</div>
+</li>
+</ul>
+</li>
+</ul>
+
+<p>
+<a href="http://build.gaia.daum.net/wiki/_detail/study:clean-coders-codecasts:fig-12.png?id=study%3Aclean-coders-codecasts%3A4.function.structure&cache=cache" class="media" title="study:clean-coders-codecasts:fig-12.png"><img src="./study clean-coders-codecasts 4.function.structure []_files/study-clean-coders-codecasts-fig-12.png" class="media" title="fig-12" alt="fig-12"></a>
+</p>
+<ul>
+<li class="level1"><div class="li"> switch 문장에서 source code 의존성은 flow of control과 방향이 같다.</div>
+<ul>
+<li class="level2"><div class="li"> switch 문장은 모든 외부 모듈에 영향을 받는다는 것을 의미</div>
+</li>
+<li class="level2"><div class="li"> 외부 모듈 중 하나라도 변경이 일어나면 switch 문장에 영향을 미치고, switch에 의존하는 다른 모든 것들에도 영향을 미친다.</div>
+</li>
+<li class="level2"><div class="li"> case에서 의존하는 모듈이 변경되면 switch가 변경되고, 이를 사용하는 app가 변경되어야 한다.  - redeploy되어야 한다.</div>
+</li>
+<li class="level2"><div class="li"> switch 문장은 Independent Deployability를 불가능하게 하는 많은 의존성을 만든다. </div>
+</li>
+</ul>
+</li>
+<li class="level1"><div class="li"> switch 문장 제거 옵션</div>
+<ol>
+<li class="level2"><div class="li"> invert switch to polymorphic dispatch</div>
+</li>
+<li class="level2"><div class="li"> move switch stmt to places that can't do any harm</div>
+</li>
+</ol>
+</li>
+</ul>
+
+<p>
+<a href="http://build.gaia.daum.net/wiki/_detail/study:clean-coders-codecasts:fig-13.png?id=study%3Aclean-coders-codecasts%3A4.function.structure&cache=cache" class="media" title="study:clean-coders-codecasts:fig-13.png"><img src="./study clean-coders-codecasts 4.function.structure []_files/study-clean-coders-codecasts-fig-13.png" class="media" title="fig-13" alt="fig-13"></a>
+</p>
+<ul>
+<li class="level1"><div class="li"> switch 문장의 인자(타입 코드)를 abstrtact base 클래스로 치환하라.</div>
+<ul>
+<li class="level2"><div class="li"> switch 문장에서 수행할 코드에 대응하는 메소드를 갖는.</div>
+</li>
+</ul>
+</li>
+</ul>
+
+<p>
+<a href="http://build.gaia.daum.net/wiki/_detail/study:clean-coders-codecasts:fig-14.png?id=study%3Aclean-coders-codecasts%3A4.function.structure&cache=cache" class="media" title="study:clean-coders-codecasts:fig-14.png"><img src="./study clean-coders-codecasts 4.function.structure []_files/study-clean-coders-codecasts-fig-14.png" class="media" title="fig-14" alt="fig-14"></a>
+</p>
+<ul>
+<li class="level1"><div class="li"> 각 case 문장은 각 case에서 수행할 작업을 구현한 derived 클래스가 된다.</div>
+</li>
+</ul>
+
+<p>
+<a href="http://build.gaia.daum.net/wiki/_detail/study:clean-coders-codecasts:fig-15.png?id=study%3Aclean-coders-codecasts%3A4.function.structure&cache=cache" class="media" title="study:clean-coders-codecasts:fig-15.png"><img src="./study clean-coders-codecasts 4.function.structure []_files/study-clean-coders-codecasts-fig-15.png" class="media" title="fig-15" alt="fig-15"></a>
+</p>
+<ul>
+<li class="level1"><div class="li"> runtime dependency(flow of control)는 그대로 이나 source code dependency가 inverted됨</div>
+</li>
+<li class="level1"><div class="li"> 이제 신경 쓸 일은 언제, 어떻게 인스턴스들을 생성하는가이다.</div>
+</li>
+<li class="level1"><div class="li"> 대개 팩토리에서 이런 작업을 수행한다.</div>
+<ul>
+<li class="level2"><div class="li"> 이게 main이라는 주요한 토픽을 가져온다.</div>
+</li>
+</ul>
+</li>
+</ul>
+
+<p>
+<a href="http://build.gaia.daum.net/wiki/_detail/study:clean-coders-codecasts:fig-16.png?id=study%3Aclean-coders-codecasts%3A4.function.structure&cache=cache" class="media" title="study:clean-coders-codecasts:fig-16.png"><img src="./study clean-coders-codecasts 4.function.structure []_files/study-clean-coders-codecasts-fig-16.png" class="media" title="fig-16" alt="fig-16"></a>
+</p>
+<ul>
+<li class="level1"><div class="li"> 당신이 작성하는 모든 어플리케이션에 대해서 모듈 다이어그램에 코어 어플리케이션 기능을 제공하는 App와 하위 수준 상세를 제공하는 Main사이에 선을 그을 수 있어야 한다.</div>
+</li>
+<li class="level1"><div class="li"> 2개의 Partition</div>
+<ul>
+<li class="level2"><div class="li"> Application Partition</div>
+<ul>
+<li class="level3"><div class="li"> 대개의 어플리케이션 코드가 존재하는 곳.</div>
+</li>
+</ul>
+</li>
+<li class="level2"><div class="li"> Main Partition</div>
+<ul>
+<li class="level3"><div class="li"> 하위 레벨…(factory, configuration data, main program)</div>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+<p>
+<a href="http://build.gaia.daum.net/wiki/_detail/study:clean-coders-codecasts:fig-17.png?id=study%3Aclean-coders-codecasts%3A4.function.structure&cache=cache" class="media" title="study:clean-coders-codecasts:fig-17.png"><img src="./study clean-coders-codecasts 4.function.structure []_files/study-clean-coders-codecasts-fig-17.png" class="media" title="fig-17" alt="fig-17"></a>
+</p>
+<ul>
+<li class="level1"><div class="li"> App Partition은 다수의 서브 모듈로 나눠진다.</div>
+</li>
+<li class="level1"><div class="li"> Main Partition은 should be kept small. subdivision should be limited.</div>
+</li>
+<li class="level1"><div class="li"> 이 Partition들 간의 의존성은 한방향이여야하고, 한방향만 존재해야 한다.</div>
+<ul>
+<li class="level2"><div class="li"> Main Partition은 App Partition에 의존성을 가질 수 있지만, App Partition은 Main Partition에 의존성을 가지면 안된다.</div>
+</li>
+<li class="level2"><div class="li"> in essence, Main Partition은 App Partition의 plugin이다.</div>
+</li>
+</ul>
+</li>
+<li class="level1"><div class="li"> 이러한 테크닉을 <strong> dependency injection </strong>이라고 한다.</div>
+</li>
+<li class="level1"><div class="li"> Good partitioning을 해야 하는데, FW을 과도하게 사용하여 많은 <acronym title="Extensible Markup Language">XML</acronym> 파일, 설정 파일들을 만드는 개발자들도 있다.</div>
+</li>
+<li class="level1"><div class="li"> dependency injection의 한가지 트릭은 caefully define and maintain your partitioning</div>
+</li>
+<li class="level1"><div class="li"> FW을 사용하는 것은 좋다. 하지만 Main에서 최소한만 entry point만 App로 inject하고 Main이 factory, strategy 등을 이용하여 나머지 일을 하도록 해라.</div>
+</li>
+<li class="level1"><div class="li"> Main Partition으로 내려온 switch stmt는 안전하다.</div>
+</li>
+</ul>
+
+<p>
+<a href="http://build.gaia.daum.net/wiki/_detail/study:clean-coders-codecasts:fig-18.png?id=study%3Aclean-coders-codecasts%3A4.function.structure&cache=cache" class="media" title="study:clean-coders-codecasts:fig-18.png"><img src="./study clean-coders-codecasts 4.function.structure []_files/study-clean-coders-codecasts-fig-18.png" class="media" title="fig-18" alt="fig-18"></a>
+</p>
+<ul>
+<li class="level1"><div class="li"> plugin이 자신들의 plugin은을 갖는다면 ?</div>
+</li>
+</ul>
+
+<p>
+<a href="http://build.gaia.daum.net/wiki/_detail/study:clean-coders-codecasts:fig-19.png?id=study%3Aclean-coders-codecasts%3A4.function.structure&cache=cache" class="media" title="study:clean-coders-codecasts:fig-19.png"><img src="./study clean-coders-codecasts 4.function.structure []_files/study-clean-coders-codecasts-fig-19.png" class="media" title="fig19" alt="fig19"></a>
+</p>
+<ul>
+<li class="level1"><div class="li"> Main 파티션과 App 파티션의 경계는 명확하나, App 파티션에서 플러그인들 간의 관계는 명확하지 않다.</div>
+</li>
+<li class="level1"><div class="li"> 이 예제에서 모듈들은 고립(isolate)된 플러그인이 아니다. 각 모듈들을 배포할 때 주의를 해야 한다.</div>
+</li>
+<li class="level1"><div class="li"> 모듈 A는 모듈 B의 플러그인이고, 모듈 B는 모듈 C의 플러그인이다.</div>
+</li>
+<li class="level1"><div class="li"> 이제까지 설명한 Partitioning의 목적은 independently deployable 모듈로 구성된 시스템을 구성하는 것이다.</div>
+</li>
+<li class="level1"><div class="li"> independently deployable == independently developable</div>
+</li>
+<li class="level1"><div class="li"> switch 문장이 보여면 independently deployable 플러그인 구조로 변환해야 한다.</div>
+</li>
+<li class="level1"><div class="li"> 긴 if-else 문장도 마찬가지다.</div>
+</li>
+</ul>
+
+</div>
+<div class="secedit"><form class="button btn_secedit" method="post" action="./study clean-coders-codecasts 4.function.structure []_files/study clean-coders-codecasts 4.function.structure [].html"><div class="no"><input type="hidden" name="do" value="edit"><input type="hidden" name="lines" value="6325-12581"><input type="hidden" name="rev" value="1323755447"><input type="submit" value="편집" class="button" title="switches and cases"></div></form></div>
+<h2><a name="paradigms" id="paradigms">Paradigms</a></h2>
+<div class="level2">
+<ul>
+<li class="level1"><div class="li"> 3가지 패러다임이 계속 사용된다.</div>
+<ul>
+<li class="level2"><div class="li"> functional programming</div>
+</li>
+<li class="level2"><div class="li"> structured</div>
+</li>
+<li class="level2"><div class="li"> Object oriented</div>
+</li>
+</ul>
+</li>
+</ul>
+
+</div>
+<div class="secedit"><form class="button btn_secedit" method="post" action="./study clean-coders-codecasts 4.function.structure []_files/study clean-coders-codecasts 4.function.structure [].html"><div class="no"><input type="hidden" name="do" value="edit"><input type="hidden" name="lines" value="12582-12721"><input type="hidden" name="rev" value="1323755447"><input type="submit" value="편집" class="button" title="Paradigms"></div></form></div>
+<h2><a name="functional_programming" id="functional_programming">functional programming</a></h2>
+<div class="level2">
+<ul>
+<li class="level1"><div class="li"> 제일 먼저 창안된 패러다임.</div>
+</li>
+<li class="level1"><div class="li"> 1947년. 근데 최근에 다시 유명해지고 있다.</div>
+</li>
+<li class="level1"><div class="li"> assignment 없이 프로그래밍이 가능</div>
+</li>
+<li class="level1"><div class="li"> 변수를 사용하는 대신, 이 변수들을 함수의 인자로 사용</div>
+</li>
+<li class="level1"><div class="li"> 루프를 돌면서 변수들을 다루는 대신 재귀함수 호출을 사용</div>
+</li>
+<li class="level1"><div class="li"> 값은 입력에 대해 항상 같은 결과</div>
+</li>
+<li class="level1"><div class="li"> no side effect</div>
+</li>
+</ul>
+
+</div>
+<div class="secedit"><form class="button btn_secedit" method="post" action="./study clean-coders-codecasts 4.function.structure []_files/study clean-coders-codecasts 4.function.structure [].html"><div class="no"><input type="hidden" name="do" value="edit"><input type="hidden" name="lines" value="12722-13139"><input type="hidden" name="rev" value="1323755447"><input type="submit" value="편집" class="button" title="functional programming"></div></form></div>
+<h2><a name="side_effects" id="side_effects">Side Effects</a></h2>
+<div class="level2">
+<pre class="code java"><span class="kw2">public</span> <span class="kw4">int</span> getSize<span class="br0">(</span><span class="br0">)</span> <span class="br0">{</span>
+    <span class="kw2">return</span> size<span class="sy0">;</span>
+<span class="br0">}</span>
+&nbsp;
+<span class="kw2">public</span> <span class="kw4">void</span> push<span class="br0">(</span><span class="kw4">int</span> element<span class="br0">)</span> <span class="br0">{</span>
+    <span class="kw1">if</span><span class="br0">(</span>size == capacity<span class="br0">)</span>
+        <span class="kw2">throw</span> <span class="kw2">new</span> Overflow<span class="br0">(</span><span class="br0">)</span><span class="sy0">;</span>
+    elements<span class="br0">[</span>size++<span class="br0">]</span> = element<span class="sy0">;</span>
+<span class="br0">}</span></pre><ul>
+<li class="level1"><div class="li"> 함수가 함수보다 스코프가 큰 변수를 변경하는 경우를 생각해보자.</div>
+</li>
+<li class="level1"><div class="li"> 이런 함수는 side effect를 갖는다. 이런 side effect는 다음번에 이 함수가 호출되었을 때 함수의 행위를 변경할 수 있고, 혹은 다른 함수의 행위를 변경할 수도 있다.</div>
+</li>
+<li class="level1"><div class="li"> 이런 것이 함수를 읽기 어렵게 하고, 오류의 원인이 된다.</div>
+</li>
+<li class="level1"><div class="li"> 종종 side effect 함수들은 짝(setter/getter, open/close, new/delete)을 이룬다. 이게 오류의 원인되는 이유이다</div>
+</li>
+<li class="level1"><div class="li"> 함수들은 순서를 지켜며 호출되어야 한다. ← <strong> temporal coupling </strong></div>
+</li>
+<li class="level1"><div class="li"> temporal coupling을 지키지 않아서 오류를 겪은 적이 있을 것이다.</div>
+</li>
+<li class="level1"><div class="li"> open/close처럼 쉽지만은 않다. 대부분의 temporal coupling은 감춰져있다.</div>
+</li>
+</ul>
+
+<p>
+<a href="http://build.gaia.daum.net/wiki/_detail/study:clean-coders-codecasts:fig-20.png?id=study%3Aclean-coders-codecasts%3A4.function.structure&cache=cache" class="media" title="study:clean-coders-codecasts:fig-20.png"><img src="./study clean-coders-codecasts 4.function.structure []_files/study-clean-coders-codecasts-fig-20.png" class="media" title="fig20" alt="fig20" width="500"></a>
+</p>
+<ul>
+<li class="level1"><div class="li"> temporal coupling을 제거할 수 있나 ?</div>
+</li>
+<li class="level1"><div class="li"> 대부분의 경우 제거 가능하다. ← <strong> passing a block </strong> 기법으로 해소</div>
+</li>
+<li class="level1"><div class="li"> passing a block은 다음을 보장한다.</div>
+<ul>
+<li class="level2"><div class="li"> consistent</div>
+</li>
+<li class="level2"><div class="li"> right order</div>
+</li>
+<li class="level2"><div class="li"> limited side effect</div>
+</li>
+</ul>
+</li>
+</ul>
+
+</div>
+<div class="secedit"><form class="button btn_secedit" method="post" action="./study clean-coders-codecasts 4.function.structure []_files/study clean-coders-codecasts 4.function.structure [].html"><div class="no"><input type="hidden" name="do" value="edit"><input type="hidden" name="lines" value="13140-14447"><input type="hidden" name="rev" value="1323755447"><input type="submit" value="편집" class="button" title="Side Effects"></div></form></div>
+<h2><a name="command_query_separation" id="command_query_separation">Command Query Separation</a></h2>
+<div class="level2">
+<ul>
+<li class="level1"><div class="li"> side effect를 관리하는 좋은 방법 중 하나.</div>
+</li>
+<li class="level1"><div class="li"> command</div>
+<ul>
+<li class="level2"><div class="li"> 시스템의 상태 변경 가능</div>
+</li>
+<li class="level2"><div class="li"> side effect를 갖는다.</div>
+</li>
+<li class="level2"><div class="li"> 시스템의 상태를 변경하는 command는 아무것도 반환하지 않는다.</div>
+</li>
+</ul>
+</li>
+<li class="level1"><div class="li"> query</div>
+<ul>
+<li class="level2"><div class="li"> side effect가 없다.</div>
+</li>
+<li class="level2"><div class="li"> 계산값이나 시스템의 상태를 반환한다. </div>
+</li>
+</ul>
+</li>
+<li class="level1"><div class="li"> 분명한 예는 getter/setter이다.</div>
+</li>
+<li class="level1"><div class="li"> CQS는 다음을 형식화(formalize)한다.</div>
+<ul>
+<li class="level2"><div class="li"> 상태를 변경하는 함수는 값을 반환하면 안된다.</div>
+</li>
+<li class="level2"><div class="li"> 값을 반환하는 함수는 상태를 변경하면 안된다.</div>
+</li>
+</ul>
+</li>
+<li class="level1"><div class="li"> 이 원칙이 이상하게 느껴질 수 있으나 분명한 이점이 있다.</div>
+</li>
+</ul>
+<pre class="code java"><span class="kw4">int</span>  f<span class="br0">(</span><span class="br0">)</span><span class="sy0">;</span> <span class="co1">// query</span>
+&nbsp;
+<span class="kw4">void</span> g<span class="br0">(</span><span class="br0">)</span><span class="sy0">;</span> <span class="co1">// command</span></pre><ul>
+<li class="level1"><div class="li"> 함수가 side effect가 있는지 없는지를 쉽게 인식할 수 있다.</div>
+</li>
+<li class="level2"><div class="li"> 다른 예를 보자.</div>
+</li>
+</ul>
+<pre class="code java">User u = authorizer.<span class="me1">login</span><span class="br0">(</span>userName, password<span class="br0">)</span><span class="sy0">;</span></pre><ul>
+<li class="level1"><div class="li"> command가 void가 아닌 다른 에러 코드 등을 반환하는 대신 exception을 던지도록 하는 것이 낫다.</div>
+</li>
+<li class="level1"><div class="li"> 아래와 같다.</div>
+</li>
+</ul>
+<pre class="code java">authorizer.<span class="me1">login</span><span class="br0">(</span>userName, password<span class="br0">)</span><span class="sy0">;</span>
+User u = authorizer.<span class="me1">getUser</span><span class="br0">(</span>userName<span class="br0">)</span><span class="sy0">;</span></pre><ul>
+<li class="level1"><div class="li"> 아래와 같이 상태를 변경하면서 이전 상태를 반환하는 함수를 고려해보자.</div>
+<ul>
+<li class="level2"><div class="li"> 저장해 놓았다가 후에 원상태로 복원하기 사용할 수 있다.</div>
+</li>
+</ul>
+</li>
+</ul>
+<pre class="code java">oldBlah = setBlah<span class="br0">(</span>newBlah<span class="br0">)</span><span class="sy0">;</span>
+...
+<span class="me1">setBlah</span><span class="br0">(</span>oldBlah<span class="br0">)</span><span class="sy0">;</span></pre><ul>
+<li class="level1"><div class="li"> passing a block으로 해소할 수 있다.</div>
+</li>
+</ul>
+<pre class="code java">withBlah<span class="br0">(</span>newBlah, someBlahCommand<span class="br0">)</span><span class="sy0">;</span></pre><ul>
+<li class="level1"><div class="li"> 당신 코드의 독자들을 혼란스럽게 하지 말라.</div>
+<ul>
+<li class="level2"><div class="li"> 값을 반환하는 함수는 상태를 변경하면 안된다.</div>
+</li>
+<li class="level2"><div class="li"> 상태를 변경하는 함수는 exception을 발생시킬 수는 있지만, 값을 반환할 수는 없다.</div>
+</li>
+</ul>
+</li>
+</ul>
+
+</div>
+<div class="secedit"><form class="button btn_secedit" method="post" action="./study clean-coders-codecasts 4.function.structure []_files/study clean-coders-codecasts 4.function.structure [].html"><div class="no"><input type="hidden" name="do" value="edit"><input type="hidden" name="lines" value="14448-16224"><input type="hidden" name="rev" value="1323755447"><input type="submit" value="편집" class="button" title="Command Query Separation"></div></form></div>
+<h2><a name="tell_don_t_ask" id="tell_don_t_ask">Tell Don't Ask</a></h2>
+<div class="level2">
+<ul>
+<li class="level1"><div class="li"> extreme한 CQS은 C와 Q를 함께 사용하지 말도록 한다.</div>
+</li>
+</ul>
+<pre class="code java"><span class="kw1">if</span><span class="br0">(</span>user.<span class="me1">isLoggedIn</span><span class="br0">(</span><span class="br0">)</span><span class="br0">)</span>
+    user.<span class="me1">execute</span><span class="br0">(</span>command<span class="br0">)</span><span class="sy0">;</span>
+<span class="kw1">else</span>
+    annuciator.<span class="me1">promptLogin</span><span class="br0">(</span><span class="br0">)</span><span class="sy0">;</span></pre><ul>
+<li class="level1"><div class="li"> 아래와 같이 예외를 사용하는 것이 나아보이지 않나 ?</div>
+</li>
+</ul>
+<pre class="code java"><span class="kw2">try</span>
+    user.<span class="me1">execute</span><span class="br0">(</span>command<span class="br0">)</span><span class="sy0">;</span>
+<span class="kw2">catch</span><span class="br0">(</span>User.<span class="me1">NotLoggedIn</span> e<span class="br0">)</span>
+    annuciator.<span class="me1">promptLogin</span><span class="br0">(</span><span class="br0">)</span><span class="sy0">;</span></pre><ul>
+<li class="level1"><div class="li"> 나아가 아래와 같이 user 객체가 모든 것을 처리하도록 하는 것이 더 나아보인다.</div>
+</li>
+</ul>
+<pre class="code java">user.<span class="me1">execute</span><span class="br0">(</span>command, annuciator<span class="br0">)</span><span class="sy0">;</span></pre><ul>
+<li class="level1"><div class="li"> 결국 로그인되었는지 아닌지 아는 것은 user 객체이다. 이 상태는 user 객체에 속한다. 왜 user 상태를 가져다가, user를 대신해서 결정을 하는가 ? user가 해당 행위를 수행하는 것이 맞다.</div>
+</li>
+<li class="level1"><div class="li"> 이게 <strong> Tell Don't Ask </strong>예제로 연결된다.</div>
+<ul>
+<li class="level2"><div class="li"> tell other object what to do, but not to ask object what the state is.</div>
+</li>
+<li class="level2"><div class="li"> 객체의 상태를 얻어서 객체를 대신해서 결정을 하지 말고, 객체에게 결정하도록 하는 것이 맞다.</div>
+</li>
+</ul>
+</li>
+<li class="level1"><div class="li"> 이 규칙을 준수하다보면 Q가 많이 필요없어진다. 이건 매우 좋은 것이다. 왜냐하면 Q는 곧 out of control되는 경향이 있다.</div>
+</li>
+</ul>
+<pre class="code java">o.<span class="me1">getX</span><span class="br0">(</span><span class="br0">)</span>
+    .<span class="me1">getY</span><span class="br0">(</span><span class="br0">)</span>
+        .<span class="me1">getZ</span><span class="br0">(</span><span class="br0">)</span>
+            .<span class="me1">doSomething</span><span class="br0">(</span><span class="br0">)</span><span class="sy0">;</span></pre><ul>
+<li class="level1"><div class="li"> 이런 long chain of function을 본적이 있을 것이다. ← <strong> train recks</strong></div>
+</li>
+<li class="level1"><div class="li"> Tell, Don't ask의 명확한 위반</div>
+<ul>
+<li class="level2"><div class="li"> 뭔가를 tell(doXXX)하기 전에 지속적으로 ask(getXXX)함으로.</div>
+</li>
+</ul>
+</li>
+<li class="level1"><div class="li"> 아래와 같이 변경하는 것이 더 좋다.</div>
+</li>
+</ul>
+<pre class="code java">o.<span class="me1">DoSomething</span><span class="br0">(</span><span class="br0">)</span><span class="sy0">;</span></pre><ul>
+<li class="level1"><div class="li"> o에게 무엇을 하라고 했는데, o는 어떻게 해야 할지 모른다. 하지만 o는 어떤 다른 객체에게 tell하면 되는지는 안다. 최종적으로 처리되기까지 요청이 전파된다.</div>
+</li>
+<li class="level1"><div class="li"> law of demeter</div>
+<ul>
+<li class="level2"><div class="li"> 하나의 함수가 전체 시스템의 객체들 간의 네비게이션을 아는 것은 나쁜 아이디어이다.</div>
+</li>
+</ul>
+</li>
+<li class="level1"><div class="li"> 아래 코드가 얼마나 많은 지식이 필요한지 고려해보라.</div>
+</li>
+</ul>
+<pre class="code java">o.<span class="me1">getX</span><span class="br0">(</span><span class="br0">)</span>
+    .<span class="me1">getY</span><span class="br0">(</span><span class="br0">)</span>
+        .<span class="me1">getZ</span><span class="br0">(</span><span class="br0">)</span>
+            .<span class="me1">doSomething</span><span class="br0">(</span><span class="br0">)</span><span class="sy0">;</span></pre><ul>
+<li class="level1"><div class="li"> o는 X를 갖는다.</div>
+</li>
+<li class="level2"><div class="li"> X는 Y를 갖는다.</div>
+</li>
+<li class="level2"><div class="li"> Y는 Z를 갖는다.</div>
+</li>
+<li class="level2"><div class="li"> Z는 doSomething() 할 수 있다.</div>
+</li>
+<li class="level2"><div class="li"> 한 라인의 코드가 알아야 하는 것으로 너무 방대한 지식이고, 함수가 시스템에 너무 많이 커플링이 일어나게 한다.</div>
+</li>
+<li class="level2"><div class="li"> 함수가 우리 시스템의 전체를 알게 하고 싶지는 않다. 개별 함수는 아주 제한된 지식만 가져야 한다.</div>
+</li>
+<li class="level2"><div class="li"> 우리가 수행해야 할 것을 위해 이웃 객체에게 요청하길 원한다. 요청을 수신하면 적절한 객체가 수신할 때까지 전파되길 원한다.</div>
+</li>
+</ul>
+
+</div>
+<div class="secedit"><form class="button btn_secedit" method="post" action="./study clean-coders-codecasts 4.function.structure []_files/study clean-coders-codecasts 4.function.structure [].html"><div class="no"><input type="hidden" name="do" value="edit"><input type="hidden" name="lines" value="16225-18942"><input type="hidden" name="rev" value="1323755447"><input type="submit" value="편집" class="button" title="Tell Don&#39;t Ask"></div></form></div>
+<h3><a name="law_of_demeter" id="law_of_demeter">Law of Demeter</a></h3>
+<div class="level3">
+<ul>
+<li class="level1"><div class="li"> law of demeter는 아래와 같은 일련의 규칙을 통해 Tell, Don't Ask를 형식화(formalize)한다.</div>
+</li>
+<li class="level1"><div class="li"> You may call methods of objects that are</div>
+<ol>
+<li class="level2"><div class="li"> Passed as arguments</div>
+</li>
+<li class="level2"><div class="li"> Created locally</div>
+</li>
+<li class="level2"><div class="li"> instance variables</div>
+</li>
+<li class="level2"><div class="li"> globals</div>
+</li>
+</ol>
+</li>
+<li class="level1"><div class="li"> You may <strong>NOT</strong> call methods on objects that are:</div>
+<ul>
+<li class="level2"><div class="li"> Returned from a previous method call.</div>
+</li>
+<li class="level2"><div class="li"> <del>o.getX().getY().getZ().doSomething()</del></div>
+</li>
+</ul>
+</li>
+<li class="level1"><div class="li"> 잇점: ask대신 tell하면 surrounding과 decouple된다.</div>
+</li>
+<li class="level1"><div class="li"> 생물학 시스템은 tell don't ask의 좋은 예. 세포들은 다른 세포들에게 뭔가를 묻지 않는다. 대신 원하는 것을 하도록 말한다.</div>
+</li>
+</ul>
+
+</div>
+<div class="secedit"><form class="button btn_secedit" method="post" action="./study clean-coders-codecasts 4.function.structure []_files/study clean-coders-codecasts 4.function.structure [].html"><div class="no"><input type="hidden" name="do" value="edit"><input type="hidden" name="lines" value="18943-19595"><input type="hidden" name="rev" value="1323755447"><input type="submit" value="편집" class="button" title="Law of Demeter"></div></form></div>
+<h2><a name="structured_programming" id="structured_programming">structured programming</a></h2>
+<div class="level2">
+<ul>
+<li class="level1"><div class="li"> 가장 나중에 나온 패러다임(67)</div>
+</li>
+<li class="level1"><div class="li"> functional(1957), OO(62~63)</div>
+</li>
+<li class="level1"><div class="li"> 3개의 패러다임이 50도 전에 10년 사이에 나왔다. 그 이후 지속되는 패러다임이 없었다.</div>
+</li>
+</ul>
+
+<p>
+<a href="http://build.gaia.daum.net/wiki/_detail/study:clean-coders-codecasts:fig-21.png?id=study%3Aclean-coders-codecasts%3A4.function.structure&cache=cache" class="media" title="study:clean-coders-codecasts:fig-21.png"><img src="./study clean-coders-codecasts 4.function.structure []_files/study-clean-coders-codecasts-fig-21.png" class="media" title="fig-21.png" alt="fig-21.png"></a>
+</p>
+<ul>
+<li class="level1"><div class="li"> 3개의 기본 오퍼레이션들(sequence, selection, iteration)로 프로그램이 구성된다.</div>
+</li>
+<li class="level1"><div class="li"> single entrance at the top, single exit at the bottom의 블럭의 조합으로 프로그램을 구성</div>
+</li>
+</ul>
+
+</div>
+<div class="secedit"><form class="button btn_secedit" method="post" action="./study clean-coders-codecasts 4.function.structure []_files/study clean-coders-codecasts 4.function.structure [].html"><div class="no"><input type="hidden" name="do" value="edit"><input type="hidden" name="lines" value="19596-20092"><input type="hidden" name="rev" value="1323755447"><input type="submit" value="편집" class="button" title="structured programming"></div></form></div>
+<h2><a name="early_returns" id="early_returns">early returns</a></h2>
+<div class="level2">
+<pre class="code java"><span class="kw2">private</span> <span class="kw4">boolean</span> nameIsValxxxx
+    <span class="kw1">if</span><span class="br0">(</span>name.<span class="me1">equals</span><span class="br0">(</span><span class="st0">""</span><span class="br0">)</span><span class="br0">)</span>
+        <span class="kw2">return</span> <span class="kw2">true</span><span class="sy0">;</span>
+    <span class="kw1">if</span><span class="br0">(</span><span class="sy0">!</span>WikiWordWidget.<span class="me1">xxx</span><span class="br0">)</span>
+        <span class="kw2">return</span> <span class="kw2">true</span><span class="sy0">;</span>
+    <span class="kw2">return</span> <span class="kw2">false</span><span class="sy0">;</span>
+<span class="br0">}</span></pre><ul>
+<li class="level1"><div class="li"> 함수에서 early return이나 guarded return은 괜찮다.</div>
+</li>
+<li class="level1"><div class="li"> 문제가 되는 것은 루프의 중간에서 리턴하는 것이다.</div>
+</li>
+<li class="level1"><div class="li"> break, return은 loop를 복잡하게 한다.</div>
+</li>
+<li class="level1"><div class="li"> 코드가 동작하도록 하는 것보다 이해할 수 있게하는 것이 더 중요하다.</div>
+<ul>
+<li class="level2"><div class="li"> 이를 위해 middle loop break, return을 피한다.</div>
+</li>
+</ul>
+</li>
+</ul>
+
+<p>
+<a href="http://build.gaia.daum.net/wiki/_detail/study:clean-coders-codecasts:fig-22.png?id=study%3Aclean-coders-codecasts%3A4.function.structure&cache=cache" class="media" title="study:clean-coders-codecasts:fig-22.png"><img src="./study clean-coders-codecasts 4.function.structure []_files/study-clean-coders-codecasts-fig-22.png" class="media" title="fig22" alt="fig22" width="400"></a>
+</p>
+<ul>
+<li class="level1"><div class="li"> 위의 경우와 같은 early return은 괜찮다.</div>
+</li>
+</ul>
+
+<p>
+<a href="http://build.gaia.daum.net/wiki/_detail/study:clean-coders-codecasts:fig-23.png?id=study%3Aclean-coders-codecasts%3A4.function.structure&cache=cache" class="media" title="study:clean-coders-codecasts:fig-23.png"><img src="./study clean-coders-codecasts 4.function.structure []_files/study-clean-coders-codecasts-fig-23.png" class="media" title="fig23" alt="fig23" width="300"></a>
+</p>
+<ul>
+<li class="level1"><div class="li"> 위와 같은 복잡한 루프에서 break는 루프를 이해하기 어렵게 만든다.</div>
+</li>
+<li class="level1"><div class="li"> 4라인 함수를 유지한다면 structured programming의 규칙을 위반하기 어렵다.</div>
+</li>
+</ul>
+
+</div>
+<div class="secedit"><form class="button btn_secedit" method="post" action="./study clean-coders-codecasts 4.function.structure []_files/study clean-coders-codecasts 4.function.structure [].html"><div class="no"><input type="hidden" name="do" value="edit"><input type="hidden" name="lines" value="20093-20990"><input type="hidden" name="rev" value="1323755447"><input type="submit" value="편집" class="button" title="early returns"></div></form></div>
+<h2><a name="error_handling" id="error_handling">Error Handling</a></h2>
+<div class="level2">
+<ul>
+<li class="level1"><div class="li"> stack example</div>
+</li>
+</ul>
+
+</div>
+<div class="secedit"><form class="button btn_secedit" method="post" action="./study clean-coders-codecasts 4.function.structure []_files/study clean-coders-codecasts 4.function.structure [].html"><div class="no"><input type="hidden" name="do" value="edit"><input type="hidden" name="lines" value="20991-21036"><input type="hidden" name="rev" value="1323755447"><input type="submit" value="편집" class="button" title="Error Handling"></div></form></div>
+<h3><a name="테스트_추가" id="테스트_추가">1. 테스트 추가</a></h3>
+<div class="level3">
+
+<p>
+<a href="http://build.gaia.daum.net/wiki/_detail/study:clean-coders-codecasts:stack-1.png?id=study%3Aclean-coders-codecasts%3A4.function.structure&cache=cache" class="media" title="study:clean-coders-codecasts:stack-1.png"><img src="./study clean-coders-codecasts 4.function.structure []_files/study-clean-coders-codecasts-stack-1.png" class="media" title="stack-1" alt="stack-1"></a>
+</p>
+<ul>
+<li class="level1"><div class="li"> 밥 아저씨는 테스트 클래스를 만들때 아무것도 안하는 메소드를 먼저 추가하네요 ^^ nothing()</div>
+</li>
+</ul>
+
+</div>
+<div class="secedit"><form class="button btn_secedit" method="post" action="./study clean-coders-codecasts 4.function.structure []_files/study clean-coders-codecasts 4.function.structure [].html"><div class="no"><input type="hidden" name="do" value="edit"><input type="hidden" name="lines" value="21037-21246"><input type="hidden" name="rev" value="1323755447"><input type="submit" value="편집" class="button" title="1. 테스트 추가"></div></form></div>
+<h3><a name="컴파일될_만큼_만_코드_추가" id="컴파일될_만큼_만_코드_추가">2. 컴파일될 만큼 만 코드 추가</a></h3>
+<div class="level3">
+
+<p>
+<a href="http://build.gaia.daum.net/wiki/_detail/study:clean-coders-codecasts:stack-2.png?id=study%3Aclean-coders-codecasts%3A4.function.structure&cache=cache" class="media" title="study:clean-coders-codecasts:stack-2.png"><img src="./study clean-coders-codecasts 4.function.structure []_files/study-clean-coders-codecasts-stack-2.png" class="media" title="stack-2" alt="stack-2"></a>
+</p>
+<ul>
+<li class="level1"><div class="li"> Stack이라고 클래스 이름을 만들면 어떤 라이브러리에 있을지도 모를 Stack과 이름 충돌이 있을까봐 MyStack이라고 명명하고 후에 바꿉답니다.</div>
+</li>
+</ul>
+
+</div>
+<div class="secedit"><form class="button btn_secedit" method="post" action="./study clean-coders-codecasts 4.function.structure []_files/study clean-coders-codecasts 4.function.structure [].html"><div class="no"><input type="hidden" name="do" value="edit"><input type="hidden" name="lines" value="21247-21539"><input type="hidden" name="rev" value="1323755447"><input type="submit" value="편집" class="button" title="2. 컴파일될 만큼 만 코드 추가"></div></form></div>
+<h3><a name="mystack을_stack으로_rename" id="mystack을_stack으로_rename">3. MyStack을 Stack으로 Rename</a></h3>
+<div class="level3">
+
+<p>
+<a href="http://build.gaia.daum.net/wiki/_detail/study:clean-coders-codecasts:stack-3.png?id=study%3Aclean-coders-codecasts%3A4.function.structure&cache=cache" class="media" title="study:clean-coders-codecasts:stack-3.png"><img src="./study clean-coders-codecasts 4.function.structure []_files/study-clean-coders-codecasts-stack-3.png" class="media" title="stack-3" alt="stack-3"></a>
+
+</p>
+
+</div>
+<div class="secedit"><form class="button btn_secedit" method="post" action="./study clean-coders-codecasts 4.function.structure []_files/study clean-coders-codecasts 4.function.structure [].html"><div class="no"><input type="hidden" name="do" value="edit"><input type="hidden" name="lines" value="21540-21636"><input type="hidden" name="rev" value="1323755447"><input type="submit" value="편집" class="button" title="3. MyStack을 Stack으로 Rename"></div></form></div>
+<h3><a name="failing_test_추가" id="failing_test_추가">4. Failing Test 추가</a></h3>
+<div class="level3">
+
+<p>
+<a href="http://build.gaia.daum.net/wiki/_detail/study:clean-coders-codecasts:stack-4.2.png?id=study%3Aclean-coders-codecasts%3A4.function.structure&cache=cache" class="media" title="study:clean-coders-codecasts:stack-4.2.png"><img src="./study clean-coders-codecasts 4.function.structure []_files/study-clean-coders-codecasts-stack-4.2.png" class="media" alt=""></a>
+</p>
+
+<p>
+<a href="http://build.gaia.daum.net/wiki/_detail/study:clean-coders-codecasts:stack-4.1.png?id=study%3Aclean-coders-codecasts%3A4.function.structure&cache=cache" class="media" title="study:clean-coders-codecasts:stack-4.1.png"><img src="./study clean-coders-codecasts 4.function.structure []_files/study-clean-coders-codecasts-stack-4.1.png" class="media" alt=""></a>
+</p>
+
+</div>
+<div class="secedit"><form class="button btn_secedit" method="post" action="./study clean-coders-codecasts 4.function.structure []_files/study clean-coders-codecasts 4.function.structure [].html"><div class="no"><input type="hidden" name="do" value="edit"><input type="hidden" name="lines" value="21637-21769"><input type="hidden" name="rev" value="1323755447"><input type="submit" value="편집" class="button" title="4. Failing Test 추가"></div></form></div>
+<h3><a name="test_성공시킬_만큼_만_개발" id="test_성공시킬_만큼_만_개발">5. Test 성공시킬 만큼 만 개발</a></h3>
+<div class="level3">
+
+<p>
+<a href="http://build.gaia.daum.net/wiki/_detail/study:clean-coders-codecasts:stack-5.1.png?id=study%3Aclean-coders-codecasts%3A4.function.structure&cache=cache" class="media" title="study:clean-coders-codecasts:stack-5.1.png"><img src="./study clean-coders-codecasts 4.function.structure []_files/study-clean-coders-codecasts-stack-5.1.png" class="media" alt=""></a>
+</p>
+
+<p>
+<a href="http://build.gaia.daum.net/wiki/_detail/study:clean-coders-codecasts:stack-5.2.png?id=study%3Aclean-coders-codecasts%3A4.function.structure&cache=cache" class="media" title="study:clean-coders-codecasts:stack-5.2.png"><img src="./study clean-coders-codecasts 4.function.structure []_files/study-clean-coders-codecasts-stack-5.2.png" class="media" alt=""></a>
+</p>
+<ul>
+<li class="level1"><div class="li"> 테스트가 성공할 만큼 만 개발</div>
+</li>
+<li class="level1"><div class="li"> 테스트 이름을 좀 더 의미있는 이름으로 변경</div>
+</li>
+</ul>
+
+</div>
+<div class="secedit"><form class="button btn_secedit" method="post" action="./study clean-coders-codecasts 4.function.structure []_files/study clean-coders-codecasts 4.function.structure [].html"><div class="no"><input type="hidden" name="do" value="edit"><input type="hidden" name="lines" value="21770-22028"><input type="hidden" name="rev" value="1323755447"><input type="submit" value="편집" class="button" title="5. Test 성공시킬 만큼 만 개발"></div></form></div>
+<h3><a name="getsize_메소드_추가" id="getsize_메소드_추가">6. getSize() 메소드 추가</a></h3>
+<div class="level3">
+
+<p>
+<a href="http://build.gaia.daum.net/wiki/_detail/study:clean-coders-codecasts:stack-6.1.png?id=study%3Aclean-coders-codecasts%3A4.function.structure&cache=cache" class="media" title="study:clean-coders-codecasts:stack-6.1.png"><img src="./study clean-coders-codecasts 4.function.structure []_files/study-clean-coders-codecasts-stack-6.1.png" class="media" alt=""></a>
+</p>
+
+<p>
+<a href="http://build.gaia.daum.net/wiki/_detail/study:clean-coders-codecasts:stack-6.2.png?id=study%3Aclean-coders-codecasts%3A4.function.structure&cache=cache" class="media" title="study:clean-coders-codecasts:stack-6.2.png"><img src="./study clean-coders-codecasts 4.function.structure []_files/study-clean-coders-codecasts-stack-6.2.png" class="media" alt=""></a>
+</p>
+
+</div>
+<div class="secedit"><form class="button btn_secedit" method="post" action="./study clean-coders-codecasts 4.function.structure []_files/study clean-coders-codecasts 4.function.structure [].html"><div class="no"><input type="hidden" name="do" value="edit"><input type="hidden" name="lines" value="22029-22168"><input type="hidden" name="rev" value="1323755447"><input type="submit" value="편집" class="button" title="6. getSize() 메소드 추가"></div></form></div>
+<h3><a name="push_메소드_추가" id="push_메소드_추가">7. push() 메소드 추가</a></h3>
+<div class="level3">
+
+<p>
+<a href="http://build.gaia.daum.net/wiki/_detail/study:clean-coders-codecasts:stack-7.1.png?id=study%3Aclean-coders-codecasts%3A4.function.structure&cache=cache" class="media" title="study:clean-coders-codecasts:stack-7.1.png"><img src="./study clean-coders-codecasts 4.function.structure []_files/study-clean-coders-codecasts-stack-7.1.png" class="media" alt=""></a>
+</p>
+
+<p>
+<a href="http://build.gaia.daum.net/wiki/_detail/study:clean-coders-codecasts:stack-7.2.png?id=study%3Aclean-coders-codecasts%3A4.function.structure&cache=cache" class="media" title="study:clean-coders-codecasts:stack-7.2.png"><img src="./study clean-coders-codecasts 4.function.structure []_files/study-clean-coders-codecasts-stack-7.2.png" class="media" alt=""></a>
+</p>
+
+</div>
+<div class="secedit"><form class="button btn_secedit" method="post" action="./study clean-coders-codecasts 4.function.structure []_files/study clean-coders-codecasts 4.function.structure [].html"><div class="no"><input type="hidden" name="do" value="edit"><input type="hidden" name="lines" value="22169-22305"><input type="hidden" name="rev" value="1323755447"><input type="submit" value="편집" class="button" title="7. push() 메소드 추가"></div></form></div>
+<h3><a name="assert_추가" id="assert_추가">8. assert 추가</a></h3>
+<div class="level3">
+
+<p>
+<a href="http://build.gaia.daum.net/wiki/_detail/study:clean-coders-codecasts:stack-8.png?id=study%3Aclean-coders-codecasts%3A4.function.structure&cache=cache" class="media" title="study:clean-coders-codecasts:stack-8.png"><img src="./study clean-coders-codecasts 4.function.structure []_files/study-clean-coders-codecasts-stack-8.png" class="media" alt=""></a>
+</p>
+
+</div>
+<div class="secedit"><form class="button btn_secedit" method="post" action="./study clean-coders-codecasts 4.function.structure []_files/study clean-coders-codecasts 4.function.structure [].html"><div class="no"><input type="hidden" name="do" value="edit"><input type="hidden" name="lines" value="22306-22380"><input type="hidden" name="rev" value="1323755447"><input type="submit" value="편집" class="button" title="8. assert 추가"></div></form></div>
+<h3><a name="동작하도록_개선" id="동작하도록_개선">9. 동작하도록 개선</a></h3>
+<div class="level3">
+
+<p>
+<a href="http://build.gaia.daum.net/wiki/_detail/study:clean-coders-codecasts:stack-9.png?id=study%3Aclean-coders-codecasts%3A4.function.structure&cache=cache" class="media" title="study:clean-coders-codecasts:stack-9.png"><img src="./study clean-coders-codecasts 4.function.structure []_files/study-clean-coders-codecasts-stack-9.png" class="media" title="stack-9" alt="stack-9"></a>
+</p>
+
+</div>
+<div class="secedit"><form class="button btn_secedit" method="post" action="./study clean-coders-codecasts 4.function.structure []_files/study clean-coders-codecasts 4.function.structure [].html"><div class="no"><input type="hidden" name="do" value="edit"><input type="hidden" name="lines" value="22381-22471"><input type="hidden" name="rev" value="1323755447"><input type="submit" value="편집" class="button" title="9. 동작하도록 개선"></div></form></div>
+<h3><a name="테스트_추가1" id="테스트_추가1">10. 테스트 추가</a></h3>
+<div class="level3">
+
+<p>
+<a href="http://build.gaia.daum.net/wiki/_detail/study:clean-coders-codecasts:stack-10.1.png?id=study%3Aclean-coders-codecasts%3A4.function.structure&cache=cache" class="media" title="study:clean-coders-codecasts:stack-10.1.png"><img src="./study clean-coders-codecasts 4.function.structure []_files/study-clean-coders-codecasts-stack-10.1.png" class="media" alt=""></a>
+</p>
+
+<p>
+<a href="http://build.gaia.daum.net/wiki/_detail/study:clean-coders-codecasts:stack-10.2.png?id=study%3Aclean-coders-codecasts%3A4.function.structure&cache=cache" class="media" title="study:clean-coders-codecasts:stack-10.2.png"><img src="./study clean-coders-codecasts 4.function.structure []_files/study-clean-coders-codecasts-stack-10.2.png" class="media" alt=""></a>
+</p>
+<ul>
+<li class="level1"><div class="li"> 한번 push하고 한번 pop하면 empty가 되어야 하는 것을 테스트로 추가</div>
+</li>
+</ul>
+
+</div>
+<div class="secedit"><form class="button btn_secedit" method="post" action="./study clean-coders-codecasts 4.function.structure []_files/study clean-coders-codecasts 4.function.structure [].html"><div class="no"><input type="hidden" name="do" value="edit"><input type="hidden" name="lines" value="22472-22696"><input type="hidden" name="rev" value="1323755447"><input type="submit" value="편집" class="button" title="10. 테스트 추가"></div></form></div>
+<h3><a name="테스트_개선_-_convert_local_to_field" id="테스트_개선_-_convert_local_to_field">11. 테스트 개선 - Convert local to field</a></h3>
+<div class="level3">
+
+<p>
+<a href="http://build.gaia.daum.net/wiki/_detail/study:clean-coders-codecasts:stack-11.png?id=study%3Aclean-coders-codecasts%3A4.function.structure&cache=cache" class="media" title="study:clean-coders-codecasts:stack-11.png"><img src="./study clean-coders-codecasts 4.function.structure []_files/study-clean-coders-codecasts-stack-11.png" class="media" title="stack-11" alt="stack-11"></a>
+</p>
+
+</div>
+<div class="secedit"><form class="button btn_secedit" method="post" action="./study clean-coders-codecasts 4.function.structure []_files/study clean-coders-codecasts 4.function.structure [].html"><div class="no"><input type="hidden" name="do" value="edit"><input type="hidden" name="lines" value="22697-22809"><input type="hidden" name="rev" value="1323755447"><input type="submit" value="편집" class="button" title="11. 테스트 개선 - Convert local to field"></div></form></div>
+<h2><a name="errors_first" id="errors_first">Errors First</a></h2>
+<div class="level2">
+<ul>
+<li class="level1"><div class="li"> 다른 코드보다 에러 처리 코드를 먼저 작성하는 것이 바람직하다.</div>
+</li>
+<li class="level1"><div class="li"> underflow, overflow 경우에 대해서</div>
+</li>
+<li class="level1"><div class="li"> WhenPushedPastLimit_StackOverflows 테스트 추가</div>
+</li>
+</ul>
+
+</div>
+<div class="secedit"><form class="button btn_secedit" method="post" action="./study clean-coders-codecasts 4.function.structure []_files/study clean-coders-codecasts 4.function.structure [].html"><div class="no"><input type="hidden" name="do" value="edit"><input type="hidden" name="lines" value="22810-23027"><input type="hidden" name="rev" value="1323755447"><input type="submit" value="편집" class="button" title="Errors First"></div></form></div>
+<h3><a name="whenpushedpastlimit_stackoverflows_테스트_추가" id="whenpushedpastlimit_stackoverflows_테스트_추가">12. WhenPushedPastLimit_StackOverflows 테스트 추가</a></h3>
+<div class="level3">
+<ul>
+<li class="level1"><div class="li"> capacity가 2인 stack에 3번 push하면 Overflow exception 발생하는 테스트 추가</div>
+</li>
+</ul>
+
+<p>
+<a href="http://build.gaia.daum.net/wiki/_detail/study:clean-coders-codecasts:stack-12.1.png?id=study%3Aclean-coders-codecasts%3A4.function.structure&cache=cache" class="media" title="study:clean-coders-codecasts:stack-12.1.png"><img src="./study clean-coders-codecasts 4.function.structure []_files/study-clean-coders-codecasts-stack-12.1.png" class="media" alt=""></a>
+</p>
+<ul>
+<li class="level1"><div class="li"> 구현</div>
+</li>
+</ul>
+
+<p>
+<a href="http://build.gaia.daum.net/wiki/_detail/study:clean-coders-codecasts:stack-12.2.png?id=study%3Aclean-coders-codecasts%3A4.function.structure&cache=cache" class="media" title="study:clean-coders-codecasts:stack-12.2.png"><img src="./study clean-coders-codecasts 4.function.structure []_files/study-clean-coders-codecasts-stack-12.2.png" class="media" alt=""></a>
+</p>
+
+</div>
+<div class="secedit"><form class="button btn_secedit" method="post" action="./study clean-coders-codecasts 4.function.structure []_files/study clean-coders-codecasts 4.function.structure [].html"><div class="no"><input type="hidden" name="do" value="edit"><input type="hidden" name="lines" value="23028-23300"><input type="hidden" name="rev" value="1323755447"><input type="submit" value="편집" class="button" title="12. WhenPushedPastLimit_StackOverflows 테스트 추가"></div></form></div>
+<h2><a name="prefer_exceptions" id="prefer_exceptions">Prefer Exceptions</a></h2>
+<div class="level2">
+<ul>
+<li class="level1"><div class="li"> 에러 처리를 위해 pop은 null을 반환하고, push는 false를 반환할 수 있다.</div>
+</li>
+<li class="level1"><div class="li"> 이 보다는 exception을 발생시키는 것이 좋다.</div>
+</li>
+<li class="level1"><div class="li"> exception의 이름은 최대한 구체적이여야 한다. 예) Stack.Overflow</div>
+</li>
+</ul>
+
+</div>
+<div class="secedit"><form class="button btn_secedit" method="post" action="./study clean-coders-codecasts 4.function.structure []_files/study clean-coders-codecasts 4.function.structure [].html"><div class="no"><input type="hidden" name="do" value="edit"><input type="hidden" name="lines" value="23301-23574"><input type="hidden" name="rev" value="1323755447"><input type="submit" value="편집" class="button" title="Prefer Exceptions"></div></form></div>
+<h2><a name="exceptions_are_for_callers" id="exceptions_are_for_callers">Exceptions are for callers</a></h2>
+<div class="level2">
+<ul>
+<li class="level1"><div class="li"> 자바 라이브러리의 canned exception(BufferOverflowException, IllegalStateException 등)을 재사용하는 것은 바람직하지 않다.</div>
+</li>
+<li class="level1"><div class="li"> 보다 적절한 스코프를 갖고, 구체적인 이름을 갖는 exception을 사용하는 것이 좋다.</div>
+</li>
+</ul>
+
+<p>
+  (Stack.Overflow)
+
+</p>
+
+</div>
+<div class="secedit"><form class="button btn_secedit" method="post" action="./study clean-coders-codecasts 4.function.structure []_files/study clean-coders-codecasts 4.function.structure [].html"><div class="no"><input type="hidden" name="do" value="edit"><input type="hidden" name="lines" value="23575-23895"><input type="hidden" name="rev" value="1323755447"><input type="submit" value="편집" class="button" title="Exceptions are for callers"></div></form></div>
+<h2><a name="use_unchecked_exceptions" id="use_unchecked_exceptions">Use Unchecked Exceptions</a></h2>
+<div class="level2">
+<ul>
+<li class="level1"><div class="li"> checked exception 시도는 C++, Java에서 실패했다.</div>
+</li>
+<li class="level1"><div class="li"> checked exception은 <strong>reverse dependency</strong>를 유발한다.</div>
+<ul>
+<li class="level2"><div class="li"> 하위 클래스에서 어떤 exception이 유발되면 상위 클래스를 변경해야하고</div>
+</li>
+<li class="level2"><div class="li"> 사용되는 모든 코드를 변경해야 한다.</div>
+</li>
+</ul>
+</li>
+<li class="level1"><div class="li"> checked exception을 아예 사용하지 말라.</div>
+</li>
+<li class="level1"><div class="li"> underflow test 추가. WhenEmptyStackIsPopped_ShouldThrowUnderflow()</div>
+</li>
+<li class="level1"><div class="li"> 이 exception들에 어떤 메시지를 담아야 할까 ?</div>
+</li>
+<li class="level1"><div class="li"> <strong> exception이 message가 없는 것이 가장 좋다. precise하게 해서 메시지가 필요없도록. 이름으로 의미 전달되도록</strong></div>
+<ul>
+<li class="level2"><div class="li"> <strong>best comment는 comment를 작성하지 않는 것이다.</strong></div>
+</li>
+</ul>
+</li>
+</ul>
+
+</div>
+<div class="secedit"><form class="button btn_secedit" method="post" action="./study clean-coders-codecasts 4.function.structure []_files/study clean-coders-codecasts 4.function.structure [].html"><div class="no"><input type="hidden" name="do" value="edit"><input type="hidden" name="lines" value="23896-24624"><input type="hidden" name="rev" value="1323755447"><input type="submit" value="편집" class="button" title="Use Unchecked Exceptions"></div></form></div>
+<h3><a name="whenoneispushed_oneispopped_메소드_추가" id="whenoneispushed_oneispopped_메소드_추가">13. WhenOneIsPushed_OneIsPopped() 메소드 추가</a></h3>
+<div class="level3">
+<ul>
+<li class="level1"><div class="li"> 테스트 추가</div>
+</li>
+</ul>
+
+<p>
+<a href="http://build.gaia.daum.net/wiki/_detail/study:clean-coders-codecasts:stack-13.1.png?id=study%3Aclean-coders-codecasts%3A4.function.structure&cache=cache" class="media" title="study:clean-coders-codecasts:stack-13.1.png"><img src="./study clean-coders-codecasts 4.function.structure []_files/study-clean-coders-codecasts-stack-13.1.png" class="media" alt=""></a>
+</p>
+<ul>
+<li class="level1"><div class="li"> 구현</div>
+</li>
+</ul>
+
+<p>
+<a href="http://build.gaia.daum.net/wiki/_detail/study:clean-coders-codecasts:stack-13.2.png?id=study%3Aclean-coders-codecasts%3A4.function.structure&cache=cache" class="media" title="study:clean-coders-codecasts:stack-13.2.png"><img src="./study clean-coders-codecasts 4.function.structure []_files/study-clean-coders-codecasts-stack-13.2.png" class="media" alt=""></a>
+</p>
+
+</div>
+<div class="secedit"><form class="button btn_secedit" method="post" action="./study clean-coders-codecasts 4.function.structure []_files/study clean-coders-codecasts 4.function.structure [].html"><div class="no"><input type="hidden" name="do" value="edit"><input type="hidden" name="lines" value="24625-24818"><input type="hidden" name="rev" value="1323755447"><input type="submit" value="편집" class="button" title="13. WhenOneIsPushed_OneIsPopped() 메소드 추가"></div></form></div>
+<h3><a name="whenoneandtwoarepushed_twoandonearepopped_메소드_추가" id="whenoneandtwoarepushed_twoandonearepopped_메소드_추가">14. WhenOneAndTwoArePushed_TwoAndOneArePopped() 메소드 추가</a></h3>
+<div class="level3">
+<ul>
+<li class="level1"><div class="li"> 테스트 추가</div>
+</li>
+</ul>
+
+<p>
+<a href="http://build.gaia.daum.net/wiki/_detail/study:clean-coders-codecasts:stack-14.1.png?id=study%3Aclean-coders-codecasts%3A4.function.structure&cache=cache" class="media" title="study:clean-coders-codecasts:stack-14.1.png"><img src="./study clean-coders-codecasts 4.function.structure []_files/study-clean-coders-codecasts-stack-14.1.png" class="media" alt=""></a>
+</p>
+<ul>
+<li class="level1"><div class="li"> 구현</div>
+</li>
+</ul>
+
+<p>
+<a href="http://build.gaia.daum.net/wiki/_detail/study:clean-coders-codecasts:stack-14.2.png?id=study%3Aclean-coders-codecasts%3A4.function.structure&cache=cache" class="media" title="study:clean-coders-codecasts:stack-14.2.png"><img src="./study clean-coders-codecasts 4.function.structure []_files/study-clean-coders-codecasts-stack-14.2.png" class="media" alt=""></a>
+</p>
+
+</div>
+<div class="secedit"><form class="button btn_secedit" method="post" action="./study clean-coders-codecasts 4.function.structure []_files/study clean-coders-codecasts 4.function.structure [].html"><div class="no"><input type="hidden" name="do" value="edit"><input type="hidden" name="lines" value="24819-25026"><input type="hidden" name="rev" value="1323755447"><input type="submit" value="편집" class="button" title="14. WhenOneAndTwoArePushed_TwoAndOneArePopped() 메소드 추가"></div></form></div>
+<h3><a name="whencreatingstackwithnegativesize_shouldthrowillegalcapacity_메소드_추가" id="whencreatingstackwithnegativesize_shouldthrowillegalcapacity_메소드_추가">15. WhenCreatingStackWithNegativeSize_ShouldThrowIllegalCapacity() 메소드 추가</a></h3>
+<div class="level3">
+
+<p>
+<a href="http://build.gaia.daum.net/wiki/_detail/study:clean-coders-codecasts:stack-15.1.png?id=study%3Aclean-coders-codecasts%3A4.function.structure&cache=cache" class="media" title="study:clean-coders-codecasts:stack-15.1.png"><img src="./study clean-coders-codecasts 4.function.structure []_files/study-clean-coders-codecasts-stack-15.1.png" class="media" alt=""></a>
+</p>
+
+<p>
+<a href="http://build.gaia.daum.net/wiki/_detail/study:clean-coders-codecasts:stack-15.2.png?id=study%3Aclean-coders-codecasts%3A4.function.structure&cache=cache" class="media" title="study:clean-coders-codecasts:stack-15.2.png"><img src="./study clean-coders-codecasts 4.function.structure []_files/study-clean-coders-codecasts-stack-15.2.png" class="media" alt=""></a>
+</p>
+
+</div>
+<div class="secedit"><form class="button btn_secedit" method="post" action="./study clean-coders-codecasts 4.function.structure []_files/study clean-coders-codecasts 4.function.structure [].html"><div class="no"><input type="hidden" name="do" value="edit"><input type="hidden" name="lines" value="25027-25222"><input type="hidden" name="rev" value="1323755447"><input type="submit" value="편집" class="button" title="15. WhenCreatingStackWithNegativeSize_ShouldThrowIllegalCapacity() 메소드 추가"></div></form></div>
+<h2><a name="special_cases" id="special_cases">Special Cases</a></h2>
+<div class="level2">
+<ul>
+<li class="level1"><div class="li"> capacity 0로 stack을 생성하면 어떻게 되나 ? 새로운 exception을 추가해야 하나 ?</div>
+</li>
+<li class="level1"><div class="li"> 하지만 너무 많은 Exception을 생성하는 것을 원하지는 않는다.</div>
+</li>
+<li class="level1"><div class="li"> 게다다 정말 capacity 0인 stack은 오류인가 ? 아니면 zero size stack이 의미 있는 객체인가 ?</div>
+</li>
+<li class="level1"><div class="li"> zero size stack은 잘 정의된 행위를 가진다는 것이 밝혀졌다.</div>
+<ul>
+<li class="level2"><div class="li"> push를 호출하면 Overflow</div>
+</li>
+<li class="level2"><div class="li"> pop을 호출하면 Underflow</div>
+</li>
+<li class="level2"><div class="li"> getSize는 0을 반환</div>
+</li>
+<li class="level2"><div class="li"> 이런 기능 구현을 Stack 클래스의 모든 메소드에 size가 0인지 비교하는 로직을 추가할 수 있다.</div>
+</li>
+<li class="level2"><div class="li"> 하지만 이 보다 좋은 방법이 있다. ← <strong>NullObject Pattern(Special Cases Pattern)</strong></div>
+</li>
+<li class="level2"><div class="li"> degenerated stack. 위에 기술된 행위를 구현하도록.</div>
+</li>
+</ul>
+</li>
+</ul>
+
+</div>
+<div class="secedit"><form class="button btn_secedit" method="post" action="./study clean-coders-codecasts 4.function.structure []_files/study clean-coders-codecasts 4.function.structure [].html"><div class="no"><input type="hidden" name="do" value="edit"><input type="hidden" name="lines" value="25223-26037"><input type="hidden" name="rev" value="1323755447"><input type="submit" value="편집" class="button" title="Special Cases"></div></form></div>
+<h3><a name="whencreatingstackwithzerocapacity_anypushshouldoverflow_메소드_추가" id="whencreatingstackwithzerocapacity_anypushshouldoverflow_메소드_추가">16. whenCreatingStackWithZeroCapacity_AnyPushShouldOverflow 메소드 추가</a></h3>
+<div class="level3">
+<ul>
+<li class="level1"><div class="li"> Stack 클래스를 2개의 클래스(Stack, BoundedStack)로 나눈다.</div>
+</li>
+</ul>
+
+<p>
+<a href="http://build.gaia.daum.net/wiki/_detail/study:clean-coders-codecasts:stack-16.png?id=study%3Aclean-coders-codecasts%3A4.function.structure&cache=cache" class="media" title="study:clean-coders-codecasts:stack-16.png"><img src="./study clean-coders-codecasts 4.function.structure []_files/study-clean-coders-codecasts-stack-16.png" class="media" alt=""></a>
+
+</p>
+
+</div>
+<div class="secedit"><form class="button btn_secedit" method="post" action="./study clean-coders-codecasts 4.function.structure []_files/study clean-coders-codecasts 4.function.structure [].html"><div class="no"><input type="hidden" name="do" value="edit"><input type="hidden" name="lines" value="26038-26248"><input type="hidden" name="rev" value="1323755447"><input type="submit" value="편집" class="button" title="16. whenCreatingStackWithZeroCapacity_AnyPushShouldOverflow 메소드 추가"></div></form></div>
+<h3><a name="extract_interface" id="extract_interface">17. Extract Interface</a></h3>
+<div class="level3">
+<ul>
+<li class="level1"><div class="li"> 기존 클래스를 BoundedStack으로 rename하고, Stack 인터페이스 추출</div>
+</li>
+</ul>
+
+<p>
+<a href="http://build.gaia.daum.net/wiki/_detail/study:clean-coders-codecasts:stack-17.1.png?id=study%3Aclean-coders-codecasts%3A4.function.structure&cache=cache" class="media" title="study:clean-coders-codecasts:stack-17.1.png"><img src="./study clean-coders-codecasts 4.function.structure []_files/study-clean-coders-codecasts-stack-17.1.png" class="media" alt=""></a>
+</p>
+
+<p>
+<a href="http://build.gaia.daum.net/wiki/_detail/study:clean-coders-codecasts:stack-17.2.png?id=study%3Aclean-coders-codecasts%3A4.function.structure&cache=cache" class="media" title="study:clean-coders-codecasts:stack-17.2.png"><img src="./study clean-coders-codecasts 4.function.structure []_files/study-clean-coders-codecasts-stack-17.2.png" class="media" alt=""></a>
+</p>
+
+<p>
+<a href="http://build.gaia.daum.net/wiki/_detail/study:clean-coders-codecasts:stack-17.3.png?id=study%3Aclean-coders-codecasts%3A4.function.structure&cache=cache" class="media" title="study:clean-coders-codecasts:stack-17.3.png"><img src="./study clean-coders-codecasts 4.function.structure []_files/study-clean-coders-codecasts-stack-17.3.png" class="media" alt=""></a>
+</p>
+
+<p>
+<a href="http://build.gaia.daum.net/wiki/_detail/study:clean-coders-codecasts:stack-17.4.png?id=study%3Aclean-coders-codecasts%3A4.function.structure&cache=cache" class="media" title="study:clean-coders-codecasts:stack-17.4.png"><img src="./study clean-coders-codecasts 4.function.structure []_files/study-clean-coders-codecasts-stack-17.4.png" class="media" alt=""></a>
+</p>
+
+</div>
+<div class="secedit"><form class="button btn_secedit" method="post" action="./study clean-coders-codecasts 4.function.structure []_files/study clean-coders-codecasts 4.function.structure [].html"><div class="no"><input type="hidden" name="do" value="edit"><input type="hidden" name="lines" value="26249-26570"><input type="hidden" name="rev" value="1323755447"><input type="submit" value="편집" class="button" title="17. Extract Interface"></div></form></div>
+<h3><a name="whenoneispushed_oneisontop_메소드_추가" id="whenoneispushed_oneisontop_메소드_추가">18. whenOneIsPushed_OneIsOnTop 메소드 추가</a></h3>
+<div class="level3">
+
+<p>
+<a href="http://build.gaia.daum.net/wiki/_detail/study:clean-coders-codecasts:stack-18.1.png?id=study%3Aclean-coders-codecasts%3A4.function.structure&cache=cache" class="media" title="study:clean-coders-codecasts:stack-18.1.png"><img src="./study clean-coders-codecasts 4.function.structure []_files/study-clean-coders-codecasts-stack-18.1.png" class="media" alt=""></a>
+</p>
+
+<p>
+<a href="http://build.gaia.daum.net/wiki/_detail/study:clean-coders-codecasts:stack-18.2.png?id=study%3Aclean-coders-codecasts%3A4.function.structure&cache=cache" class="media" title="study:clean-coders-codecasts:stack-18.2.png"><img src="./study clean-coders-codecasts 4.function.structure []_files/study-clean-coders-codecasts-stack-18.2.png" class="media" alt=""></a>
+</p>
+
+<p>
+<a href="http://build.gaia.daum.net/wiki/_detail/study:clean-coders-codecasts:stack-18.3.png?id=study%3Aclean-coders-codecasts%3A4.function.structure&cache=cache" class="media" title="study:clean-coders-codecasts:stack-18.3.png"><img src="./study clean-coders-codecasts 4.function.structure []_files/study-clean-coders-codecasts-stack-18.3.png" class="media" alt=""></a>
+</p>
+
+</div>
+<div class="secedit"><form class="button btn_secedit" method="post" action="./study clean-coders-codecasts 4.function.structure []_files/study clean-coders-codecasts 4.function.structure [].html"><div class="no"><input type="hidden" name="do" value="edit"><input type="hidden" name="lines" value="26571-26781"><input type="hidden" name="rev" value="1323755447"><input type="submit" value="편집" class="button" title="18. whenOneIsPushed_OneIsOnTop 메소드 추가"></div></form></div>
+<h2><a name="null_is_not_an_error" id="null_is_not_an_error">Null is not an error</a></h2>
+<div class="level2">
+<ul>
+<li class="level1"><div class="li"> stack이 empty일 때 top 함수는 무엇을 반환해야 하나 ?</div>
+<ul>
+<li class="level2"><div class="li"> null을 반환할 수도 있다.</div>
+</li>
+<li class="level2"><div class="li"> top을 호출하는 아무도 null을 기대하지는 않을 것이다.</div>
+</li>
+<li class="level2"><div class="li"> null은 NPE를 발생시킬 때 까지 시스템의 여기저기에 조용히 퍼지는 속성이 있다.</div>
+</li>
+<li class="level2"><div class="li"> StackEmpty exception을 발생시키는 것이 좋아 보인다.</div>
+</li>
+</ul>
+</li>
+</ul>
+
+</div>
+<div class="secedit"><form class="button btn_secedit" method="post" action="./study clean-coders-codecasts 4.function.structure []_files/study clean-coders-codecasts 4.function.structure [].html"><div class="no"><input type="hidden" name="do" value="edit"><input type="hidden" name="lines" value="26782-27187"><input type="hidden" name="rev" value="1323755447"><input type="submit" value="편집" class="button" title="Null is not an error"></div></form></div>
+<h3><a name="whenstackisempty_topthrowsempty_메소드_추가" id="whenstackisempty_topthrowsempty_메소드_추가">19. whenStackIsEmpty_TopThrowsEmpty() 메소드 추가</a></h3>
+<div class="level3">
+
+<p>
+<a href="http://build.gaia.daum.net/wiki/_detail/study:clean-coders-codecasts:stack-19.1.png?id=study%3Aclean-coders-codecasts%3A4.function.structure&cache=cache" class="media" title="study:clean-coders-codecasts:stack-19.1.png"><img src="./study clean-coders-codecasts 4.function.structure []_files/study-clean-coders-codecasts-stack-19.1.png" class="media" alt=""></a>
+</p>
+
+<p>
+<a href="http://build.gaia.daum.net/wiki/_detail/study:clean-coders-codecasts:stack-19.2.png?id=study%3Aclean-coders-codecasts%3A4.function.structure&cache=cache" class="media" title="study:clean-coders-codecasts:stack-19.2.png"><img src="./study clean-coders-codecasts 4.function.structure []_files/study-clean-coders-codecasts-stack-19.2.png" class="media" alt=""></a>
+</p>
+
+<p>
+<a href="http://build.gaia.daum.net/wiki/_detail/study:clean-coders-codecasts:stack-19.3.png?id=study%3Aclean-coders-codecasts%3A4.function.structure&cache=cache" class="media" title="study:clean-coders-codecasts:stack-19.3.png"><img src="./study clean-coders-codecasts 4.function.structure []_files/study-clean-coders-codecasts-stack-19.3.png" class="media" alt=""></a>
+
+</p>
+
+</div>
+<div class="secedit"><form class="button btn_secedit" method="post" action="./study clean-coders-codecasts 4.function.structure []_files/study clean-coders-codecasts 4.function.structure [].html"><div class="no"><input type="hidden" name="do" value="edit"><input type="hidden" name="lines" value="27188-27404"><input type="hidden" name="rev" value="1323755447"><input type="submit" value="편집" class="button" title="19. whenStackIsEmpty_TopThrowsEmpty() 메소드 추가"></div></form></div>
+<h3><a name="withzerocapacitystack_topthrowsempty_메소드_추가" id="withzerocapacitystack_topthrowsempty_메소드_추가">20. WithZeroCapacityStack_TopThrowsEmpty() 메소드 추가</a></h3>
+<div class="level3">
+
+<p>
+<a href="http://build.gaia.daum.net/wiki/_detail/study:clean-coders-codecasts:stack-20.png?id=study%3Aclean-coders-codecasts%3A4.function.structure&cache=cache" class="media" title="study:clean-coders-codecasts:stack-20.png"><img src="./study clean-coders-codecasts 4.function.structure []_files/study-clean-coders-codecasts-stack-20.png" class="media" alt=""></a>
+</p>
+
+</div>
+<div class="secedit"><form class="button btn_secedit" method="post" action="./study clean-coders-codecasts 4.function.structure []_files/study clean-coders-codecasts 4.function.structure [].html"><div class="no"><input type="hidden" name="do" value="edit"><input type="hidden" name="lines" value="27405-27523"><input type="hidden" name="rev" value="1323755447"><input type="submit" value="편집" class="button" title="20. WithZeroCapacityStack_TopThrowsEmpty() 메소드 추가"></div></form></div>
+<h3><a name="givenstackwithonetwopushed_findone_메소드_추가" id="givenstackwithonetwopushed_findone_메소드_추가">21. GivenStackWithOneTwoPushed_FindOne 메소드 추가</a></h3>
+<div class="level3">
+
+<p>
+<a href="http://build.gaia.daum.net/wiki/_detail/study:clean-coders-codecasts:stack-21.1.png?id=study%3Aclean-coders-codecasts%3A4.function.structure&cache=cache" class="media" title="study:clean-coders-codecasts:stack-21.1.png"><img src="./study clean-coders-codecasts 4.function.structure []_files/study-clean-coders-codecasts-stack-21.1.png" class="media" alt=""></a>
+</p>
+
+<p>
+<a href="http://build.gaia.daum.net/wiki/_detail/study:clean-coders-codecasts:stack-21.2.png?id=study%3Aclean-coders-codecasts%3A4.function.structure&cache=cache" class="media" title="study:clean-coders-codecasts:stack-21.2.png"><img src="./study clean-coders-codecasts 4.function.structure []_files/study-clean-coders-codecasts-stack-21.2.png" class="media" alt=""></a>
+</p>
+
+<p>
+<a href="http://build.gaia.daum.net/wiki/_detail/study:clean-coders-codecasts:stack-21.3.png?id=study%3Aclean-coders-codecasts%3A4.function.structure&cache=cache" class="media" title="study:clean-coders-codecasts:stack-21.3.png"><img src="./study clean-coders-codecasts 4.function.structure []_files/study-clean-coders-codecasts-stack-21.3.png" class="media" alt=""></a>
+</p>
+
+<p>
+<a href="http://build.gaia.daum.net/wiki/_detail/study:clean-coders-codecasts:stack-21.4.png?id=study%3Aclean-coders-codecasts%3A4.function.structure&cache=cache" class="media" title="study:clean-coders-codecasts:stack-21.4.png"><img src="./study clean-coders-codecasts 4.function.structure []_files/study-clean-coders-codecasts-stack-21.4.png" class="media" alt=""></a>
+</p>
+
+</div>
+<div class="secedit"><form class="button btn_secedit" method="post" action="./study clean-coders-codecasts 4.function.structure []_files/study clean-coders-codecasts 4.function.structure [].html"><div class="no"><input type="hidden" name="do" value="edit"><input type="hidden" name="lines" value="27524-27793"><input type="hidden" name="rev" value="1323755447"><input type="submit" value="편집" class="button" title="21. GivenStackWithOneTwoPushed_FindOne 메소드 추가"></div></form></div>
+<h2><a name="null_is_a_value" id="null_is_a_value">Null is a value</a></h2>
+<div class="level2">
+<ul>
+<li class="level1"><div class="li"> find가 element가 찾지 못하면 어떻게 해야 하나 ?</div>
+</li>
+<li class="level1"><div class="li"> exception을 발생시킬 수 있다. 하지만 이상하다. 어떤때는 find가 실패할 것을 기대하기 때문이다. exception은 기대하지 못한 때를 위한 것이다. 발견되지 않을 때 반환할 수 있는 값이 필요하다. NotFound를 나타내는 값.</div>
+</li>
+<li class="level1"><div class="li"> indexOf가 발견하지 못하는 경우 -1을 반환하는데, -1은 별도의 의미를 갖는다. Null을 반환하는 것이 나을 듯 하다. Null은 Nothing을 의미하는 값이다. -1은 Nothing이 아니다. </div>
+</li>
+</ul>
+
+</div>
+<div class="secedit"><form class="button btn_secedit" method="post" action="./study clean-coders-codecasts 4.function.structure []_files/study clean-coders-codecasts 4.function.structure [].html"><div class="no"><input type="hidden" name="do" value="edit"><input type="hidden" name="lines" value="27794-28397"><input type="hidden" name="rev" value="1323755447"><input type="submit" value="편집" class="button" title="Null is a value"></div></form></div>
+<h3><a name="givenstackwithno2_find2soundreturnnull_메소드_추가" id="givenstackwithno2_find2soundreturnnull_메소드_추가">22. GivenStackWithNo2_Find2SoundReturnNull 메소드 추가</a></h3>
+<div class="level3">
+
+<p>
+<a href="http://build.gaia.daum.net/wiki/_detail/study:clean-coders-codecasts:stack-22.1.png?id=study%3Aclean-coders-codecasts%3A4.function.structure&cache=cache" class="media" title="study:clean-coders-codecasts:stack-22.1.png"><img src="./study clean-coders-codecasts 4.function.structure []_files/study-clean-coders-codecasts-stack-22.1.png" class="media" alt=""></a>
+</p>
+
+<p>
+<a href="http://build.gaia.daum.net/wiki/_detail/study:clean-coders-codecasts:stack-22.2.png?id=study%3Aclean-coders-codecasts%3A4.function.structure&cache=cache" class="media" title="study:clean-coders-codecasts:stack-22.2.png"><img src="./study clean-coders-codecasts 4.function.structure []_files/study-clean-coders-codecasts-stack-22.2.png" class="media" alt=""></a>
+</p>
+
+</div>
+<div class="secedit"><form class="button btn_secedit" method="post" action="./study clean-coders-codecasts 4.function.structure []_files/study clean-coders-codecasts 4.function.structure [].html"><div class="no"><input type="hidden" name="do" value="edit"><input type="hidden" name="lines" value="28398-28570"><input type="hidden" name="rev" value="1323755447"><input type="submit" value="편집" class="button" title="22. GivenStackWithNo2_Find2SoundReturnNull 메소드 추가"></div></form></div>
+<h2><a name="trying_is_one_thing" id="trying_is_one_thing">Trying is One Thing</a></h2>
+<div class="level2">
+<ul>
+<li class="level1"><div class="li"> 함수 내에서 try 문장이 있다면 try 문장이 변수 선언을 제외하고는 첫번째 문장이어야 한다.</div>
+</li>
+<li class="level1"><div class="li"> try 블럭 내에는 한 문장(함수 호출)만 있어야 한다.</div>
+</li>
+<li class="level1"><div class="li"> finally가 함수의 마지막 블럭이어야 한다. 이후에 어떤 라인도 없어야 한다.</div>
+</li>
+<li class="level1"><div class="li"> 함수는 하나의 일만 해야 한다.</div>
+</li>
+<li class="level1"><div class="li"> error handling은 하나의 일이다.</div>
+</li>
+</ul>
+
+</div>
+<div class="secedit"><form class="button btn_secedit" method="post" action="./study clean-coders-codecasts 4.function.structure []_files/study clean-coders-codecasts 4.function.structure [].html"><div class="no"><input type="hidden" name="do" value="edit"><input type="hidden" name="lines" value="28571-28994"><input type="hidden" name="rev" value="1323755447"><input type="submit" value="편집" class="button" title="Trying is One Thing"></div></form></div>
+<h2><a name="conclusion" id="conclusion">Conclusion</a></h2>
+<div class="level2">
+<ul>
+<li class="level1"><div class="li"> function signature should be small(최대 3개의 인자)</div>
+</li>
+<li class="level1"><div class="li"> boolean, null을 arg X</div>
+</li>
+<li class="level1"><div class="li"> no output arg</div>
+</li>
+<li class="level1"><div class="li"> stepdown principle</div>
+</li>
+<li class="level1"><div class="li"> switch stmt</div>
+</li>
+<li class="level1"><div class="li"> functional paradigm</div>
+</li>
+<li class="level1"><div class="li"> temporal coupling</div>
+</li>
+<li class="level1"><div class="li"> passing a block</div>
+</li>
+<li class="level1"><div class="li"> CQS</div>
+</li>
+<li class="level1"><div class="li"> Law of Demeter</div>
+</li>
+<li class="level1"><div class="li"> structured paradigm</div>
+</li>
+<li class="level1"><div class="li"> Error Handling</div>
+</li>
+<li class="level1"><div class="li"> Exception</div>
+</li>
+<li class="level1"><div class="li"> Scoped</div>
+</li>
+<li class="level1"><div class="li"> Unchecked Exception</div>
+</li>
+<li class="level1"><div class="li"> Null Object(Special Case) Pattern</div>
+</li>
+<li class="level1"><div class="li"> Null is a Value</div>
+</li>
+</ul>
+
+</div>
+<div class="secedit"><form class="button btn_secedit" method="post" action="./study clean-coders-codecasts 4.function.structure []_files/study clean-coders-codecasts 4.function.structure [].html"><div class="no"><input type="hidden" name="do" value="edit"><input type="hidden" name="lines" value="28995-"><input type="hidden" name="rev" value="1323755447"><input type="submit" value="편집" class="button" title="Conclusion"></div></form></div>
+    <!-- wikipage stop -->
+  </div>
+
+  <div class="clearer">&nbsp;</div>
+
+  
+  <div class="stylefoot">
+
+    <div class="meta">
+      <div class="user">
+        다음 사용자로 로그인: msbaek      </div>
+      <div class="doc">
+        /daum/service/build.gaia/htdocs/wiki/data/pages/study/clean-coders-codecasts/4.function.structure.txt · 마지막 수정: 2011/12/13 14:50 작성자 msbaek      </div>
+    </div>
+
+   
+    <div class="bar" id="bar__bottom">
+      <div class="bar-left" id="bar__bottomleft">
+        <form class="button btn_edit" method="post" action="./study clean-coders-codecasts 4.function.structure []_files/study clean-coders-codecasts 4.function.structure [].html"><div class="no"><input type="hidden" name="do" value="edit"><input type="hidden" name="rev" value=""><input type="submit" value="페이지 편집" class="button" accesskey="e" title="페이지 편집 [CTRL+E]"></div></form>        <form class="button btn_revs" method="get" action="./study clean-coders-codecasts 4.function.structure []_files/study clean-coders-codecasts 4.function.structure [].html"><div class="no"><input type="hidden" name="do" value="revisions"><input type="submit" value="이전 버전들" class="button" accesskey="o" title="이전 버전들 [CTRL+O]"></div></form>      </div>
+      <div class="bar-right" id="bar__bottomright">
+                <form class="button btn_admin" method="get" action="./study clean-coders-codecasts 4.function.structure []_files/study clean-coders-codecasts 4.function.structure [].html"><div class="no"><input type="hidden" name="do" value="admin"><input type="submit" value="관리" class="button" title="관리"></div></form>                <form class="button btn_logout" method="get" action="./study clean-coders-codecasts 4.function.structure []_files/study clean-coders-codecasts 4.function.structure [].html"><div class="no"><input type="hidden" name="do" value="logout"><input type="hidden" name="sectok" value="3f34a3a4661f72fbe5c155b0207e3e01"><input type="submit" value="로그아웃" class="button" title="로그아웃"></div></form>        <form class="button btn_index" method="get" action="./study clean-coders-codecasts 4.function.structure []_files/study clean-coders-codecasts 4.function.structure [].html"><div class="no"><input type="hidden" name="do" value="index"><input type="submit" value="색인" class="button" accesskey="x" title="색인 [CTRL+X]"></div></form>        <a class="nolink" href="http://build.gaia.daum.net/wiki/study:clean-coders-codecasts:4.function.structure#dokuwiki__top"><input type="button" class="button" value="맨위로" onclick="window.scrollTo(0, 0)" title="맨위로"></a>&nbsp;
+      </div>
+      <div class="clearer"></div>
+    </div>
+
+  </div>
+
+</div>
+
+<div class="footerinc">
+  <a href="http://build.gaia.daum.net/wiki/feed.php" title="Recent changes RSS feed"><img src="./study clean-coders-codecasts 4.function.structure []_files/button-rss.png" width="80" height="15" alt="Recent changes RSS feed"></a>
+
+  <a href="http://creativecommons.org/licenses/by-nc-sa/2.0/" rel="license" title="Creative Commons License"><img src="./study clean-coders-codecasts 4.function.structure []_files/button-cc.gif" width="80" height="15" alt="Creative Commons License"></a>
+
+  <a href="http://wiki.splitbrain.org/wiki:donate" title="Donate"><img src="./study clean-coders-codecasts 4.function.structure []_files/button-donate.gif" alt="Donate" width="80" height="15"></a>
+
+  <a href="http://www.php.net/" title="Powered by PHP"><img src="./study clean-coders-codecasts 4.function.structure []_files/button-php.gif" width="80" height="15" alt="Powered by PHP"></a>
+
+  <a href="http://validator.w3.org/check/referer" title="Valid XHTML 1.0"><img src="./study clean-coders-codecasts 4.function.structure []_files/button-xhtml.png" width="80" height="15" alt="Valid XHTML 1.0"></a>
+
+  <a href="http://jigsaw.w3.org/css-validator/check/referer?profile=css3" title="Valid CSS"><img src="./study clean-coders-codecasts 4.function.structure []_files/button-css.png" width="80" height="15" alt="Valid CSS"></a>
+
+  <a href="http://wiki.splitbrain.org/wiki:dokuwiki" title="Driven by DokuWiki"><img src="./study clean-coders-codecasts 4.function.structure []_files/button-dw.png" width="80" height="15" alt="Driven by DokuWiki"></a>
+
+
+
+<!--
+
+<rdf:RDF xmlns="http://web.resource.org/cc/"
+    xmlns:dc="http://purl.org/dc/elements/1.1/"
+    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+<Work rdf:about="">
+   <dc:type rdf:resource="http://purl.org/dc/dcmitype/Text" />
+   <license rdf:resource="http://creativecommons.org/licenses/by-nc-sa/2.0/" />
+</Work>
+
+<License rdf:about="http://creativecommons.org/licenses/by-nc-sa/2.0/">
+   <permits rdf:resource="http://web.resource.org/cc/Reproduction" />
+   <permits rdf:resource="http://web.resource.org/cc/Distribution" />
+   <requires rdf:resource="http://web.resource.org/cc/Notice" />
+   <requires rdf:resource="http://web.resource.org/cc/Attribution" />
+   <prohibits rdf:resource="http://web.resource.org/cc/CommercialUse" />
+   <permits rdf:resource="http://web.resource.org/cc/DerivativeWorks" />
+   <requires rdf:resource="http://web.resource.org/cc/ShareAlike" />
+</License>
+
+</rdf:RDF>
+
+-->
+
+
+</div>
+
+<div class="no"><img src="./study clean-coders-codecasts 4.function.structure []_files/indexer.php" width="1" height="1" alt=""></div>
+
+
+<div id="__KO_DIC_LAYER__" style="padding: 0px; position: fixed; z-index: 999999999; overflow: hidden; border: 2px solid rgb(51, 51, 119); display: none; "><iframe frameborder="0" scrolling="yes" style="width: 100%; height: 100%; background-color: rgb(255, 255, 255); "></iframe></div></body></html>
